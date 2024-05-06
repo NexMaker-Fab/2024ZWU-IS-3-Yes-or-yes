@@ -28,7 +28,7 @@ Two of the girls are specialized in art, have a good aesthetic, in our team as v
 
 ![](https://cdn.jsdelivr.net/gh/bigjcc/picture/img/jcc.jpg)      
 
-[Sewa]()
+[Sewa]( )
 
 ![](https://cdn.jsdelivr.net/gh/bigjcc/picture/img/jx.jpg)
 
