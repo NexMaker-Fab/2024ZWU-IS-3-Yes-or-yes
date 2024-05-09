@@ -8,29 +8,96 @@
         /* 设置页面的背景图片 */
         body{
             width: 1820px;
-            height: 1080px;
+            height: 890px;
             background-image: url("back.png");
             background-size: cover;/* 使背景图片填满页面 */
             background-repeat: no-repeat;/* 不重复背景图片 */
-            background-position: center center;/* 使背景图片居中 */
+            background-position: center center;/* 使背景图片居中 */   
+        }
+        .button1{
             display: flex;
-            justify-content: center; /* 水平居中 */
-            align-items: center; /* 垂直居中 */
+            align-items: center;/*使内容水平居中*/
+            justify-content: center;
+            background-color: transparent;
+            color: white;
+            width: 155px;
+            height: 60px;/*按钮长宽*/
+            border-radius: 50px;/*矩形圆角程度*/
+            text-align: center;
+            text-decoration: none;
+            font-size: 30px;
+            border: 1px solid white;
+            position: absolute;
+            top: 780px;
+            left: 550px;/*按钮位置*/
+            cursor: pointer;/*光标样式为手形图标*/
+        }
+        .button2{
+            display: flex;
+            align-items: center;/*使内容水平居中*/
+            justify-content: center;
+            background-color: transparent;
+            color: white;
+            width: 255px;
+            height: 60px;/*按钮长宽*/
+            border-radius: 50px;/*矩形圆角程度*/
+            text-align: center;
+            text-decoration: none;
+            font-size: 30px;
+            border: 1px solid white;
+            position: absolute;
+            top: 780px;
+            left: 750px;/*按钮位置*/
+            cursor: pointer;/*光标样式为手形图标*/
+        }
+        .button3{
+            display: flex;
+            align-items: center;/*使内容水平居中*/
+            justify-content: center;
+            background-color: transparent;
+            color: white;
+            width: 255px;
+            height: 60px;/*按钮长宽*/
+            border-radius: 50px;/*矩形圆角程度*/
+            text-align: center;
+            text-decoration: none;
+            font-size: 30px;
+            border: 1px solid white;
+            position: absolute;
+            top: 780px;
+            left: 1050px;/*按钮位置*/
+            cursor: pointer;/*光标样式为手形图标*/
+        }
+        .center-container{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center; 
             min-height: 100vh; /* 设置最小高度为视口高度 */
-            margin: 0; /* 移除默认的margin */
+            text-align: center;
+            color:white;
+
         }
         h1{
-            color:white;
+            
             font-size: 150px;
-            margin-bottom: 300px; /* 向上偏移300像素 */
-            text-align: center; /* 水平居中文本 */
+            margin-top: 0px;
+        }
+        p{
+            font-size: 24px;
+            font-weight: 300;
+            margin-top: 180px;
         }
     </style>
 </head>
 <body>
     <header>
+        <div class="center-container">
         <h1>Yes Or Yes</h1>
+        <p>Welcome to our team's web page!</p>
     </header>
-
+    <a href="Aboutus.html" class="button1">About us</a>
+    <a href="Aboutus.html" class="button2">Daily Homework</a>
+    <a href="Aboutus.html" class="button3">Daily Homework</a>
 </body>
 </html>
