@@ -7,17 +7,23 @@
     <style>
         /* 设置页面的背景图片 */
         body{
-            width: 1920px;
+            width: 1820px;
             height: 1080px;
             background-image: url("back.png");
             background-size: cover;/* 使背景图片填满页面 */
             background-repeat: no-repeat;/* 不重复背景图片 */
             background-position: center center;/* 使背景图片居中 */
+            display: flex;
+            justify-content: center; /* 水平居中 */
+            align-items: center; /* 垂直居中 */
+            min-height: 100vh; /* 设置最小高度为视口高度 */
+            margin: 0; /* 移除默认的margin */
         }
         h1{
             color:white;
-            font-size: 100px;
-            position: relative;
+            font-size: 150px;
+            margin-bottom: 300px; /* 向上偏移300像素 */
+            text-align: center; /* 水平居中文本 */
         }
     </style>
 </head>
@@ -26,8 +32,5 @@
         <h1>Yes Or Yes</h1>
     </header>
 
-    <footer>
-        <p>版权所有 &copy; 2024 交互设计团队。</p>
-    </footer>
 </body>
 </html>
