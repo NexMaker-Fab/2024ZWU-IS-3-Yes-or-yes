@@ -4,5 +4,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+<style>
+    body{
+            width: 1820px;
+            height: 890px;
+            background-color: black; 
+            color:white;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* 设置最小高度为视口高度 */
+
+        }
+        h1{
+            
+            font-size: 100px;
+            margin-top: 130px;
+            margin-left: 180px;/*文字位置*/
+        } 
+        .buttonpm{
+            display: flex;
+            align-items: center;/*使内容水平居中*/
+            justify-content: center;
+            background-color: transparent;
+            color: white;
+            width: 355px;
+            height: 60px;/*按钮长宽*/
+            text-align: center;
+            text-decoration: none;
+            font-size: 30px;
+            border:  none;
+            position: absolute;
+            top: 300px;
+            left:900px;/*按钮位置*/
+            cursor: pointer;/*光标样式为手形图标*/
+        }
+        .buttonao{
+            display: flex;
+            align-items: center;/*使内容水平居中*/
+            justify-content: center;
+            background-color: transparent;
+            color: white;
+            width: 280px;
+            height: 60px;/*按钮长宽*/
+            text-align: center;
+            text-decoration: none;
+            font-size: 30px;
+            border:  none;
+            position: absolute;
+            top: 350px;
+            left:900px;/*按钮位置*/
+            cursor: pointer;/*光标样式为手形图标*/
+        }
+
+</style>
 <body>
+    <header>
+        <h1>Daily 
+        <br>Homework</h1>
+    </header>
+    
+    <a href="pm.html" class="buttonpm">·Project Management</a>
+    <a href="ao.html" class="buttonao">·Arduino Output</a>
+    
 </body>
