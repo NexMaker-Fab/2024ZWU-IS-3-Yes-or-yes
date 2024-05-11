@@ -4,12 +4,157 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
+        body{
+            width: 1020px;
+            height: 890px;
+            background-color: black; 
+            color:white;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* 设置最小高度为视口高度 */
+
+        }
+        /*侧边栏样式*/
+        #sidebar {
+        position: fixed;
+        top: 100;
+        right: 10px;
+        width: 180px;
+        height: auto;
+        background-color: transparent;
+        border: none;
+        padding: 10px;
+        font-size: 12px;
+        }
+
+        #sidebar ul {
+          list-style-type: none;
+          padding: 0;
+        }
+
+        #sidebar li {
+        margin-bottom: 10px;
+        }
+
+        #sidebar a {
+        text-decoration: none;
+        color: white;
+        }
+
+        #sidebar a:hover {
+        color: #4c4c4d;
+        }
+        /*图片大小*/
     img{
         width: 300px;
         height: 200px;
     }
+    h1{font-size: 50px;
+    margin-top: 30px;
+    }
+    p{
+        font-size: 12px;
+    }
 </style>
 </head>
 <body>
-    <img src="">    
+    <div id="sidebar">
+        <!-- 侧边栏内容 -->
+        <ul>
+          
+          <li><a href="#section1">How to configure a website</a></li>
+          <li><a href="#subsection1-1">Step1:Get the equipment</a></li>
+          <li><a href="#subsection1-2">Step2:Set the pag</a></li>
+          <li><a href="#subsection1-3">Step3:Local setup</a></li>
+
+          <li><a href="#section2">How to make a homepage</a></li>
+          <li><a href="#subsection2-1">副标题 2-1</a></li>
+          <li><a href="#subsection2-2">副标题 2-2</a></li>
+          <li><a href="#section3">How to make a personal web page</a></li>
+          <li><a href="#subsection3-1">副标题 2-1</a></li>
+          <li><a href="#subsection3-2">副标题 2-2</a></li>
+          <li><a href="dailyhomework.html">Return</a></li>
+          <li><a href="#section4">How to use AI to assist production</a></li>
+          <li><a href="#subsection4-1">副标题 2-1</a></li>
+          <li><a href="#subsection4-2">副标题 2-2</a></li>
+          <li><a href="dailyhomework.html">Return</a></li>
+        </ul>
+      </div>
+      
+      
+    <header>
+        <h1>Project Management</h1>
+    </header>
+      <h2 id="section1">How to configure a website</h2>
+      <h3 id="subsection1-1">Step1:Get the equipment</h3>
+      <p>Installing all the tools needed to develop the software
+        <br> 
+        <br>1.Git:It serves as a control system for tracking changes to the code base, collaborating, managing 
+        <br>project versions, which allows us to clone, commit, and push changes to GitHub.
+        <br>2.Github:For our website,we utilize the github service.
+        <br>3.Github Desktop: To move or push our coding from local to GitHub, we used github desktop.
+        <br>4.VScode:We used the Visual Studio code to write down our documents.
+        <br>5.Markdown and Html language:to write our document.
+        <br>6.CSS: Corresponds with html. Used to style the website</p>
+      <h3 id="subsection1-2">Step2:Set the pag</h3>
+        <img src="../2024ZWU-IS-3-Yes-or-yes/pm-1/pm-1-1.png"> 
+        <p>To start,we need to create a repository to access github.com. Setting the repository name first, 
+        <br>and as we continue to create our repository,we need to set our visibility to Public, allowing 
+        <br>Internet users to access it. And be sure to include a README file in the repository,as this is 
+        <br>where we can provide a comprehensive project description.
+        </p>
+        <img src="../2024ZWU-IS-3-Yes-or-yes/pm-1/pm-1-2.png"> 
+        <p>Enter the repository,click to settings</p>
+        <img src="../2024ZWU-IS-3-Yes-or-yes/pm-1/pm-1-3.png"> 
+        <p>Click to Page
+        <br> 
+        <br>Additionally, take note of the following: To activate GitHub Pages for your repository, navigate to 
+        <br>the repository's settings. In the "Pages" section, choose the main source branch, typically named 
+        <br>"main," and designate the folder as "root" before saving your preferences. It's important to select 
+        <br>the "root" folder because a "docs" folder has not yet been established for this repository. Please 
+        <br>be aware that you may need to adjust this setting at a later time. After saving these settings, you 
+        <br>will receive a link to your repository. Sometimes it takes some time to provide a page link.After 
+        <br>one minute you can check the link.
+        </p>
+      <h3 id="subsection1-3">Step3:Local setup</h3>
+        <h4>1.Github Desktop</h4>
+        <img src="../2024ZWU-IS-3-Yes-or-yes/pm-1/pm-1-4.png">
+        <p>In GitHub Desktop, we go to Files and Clone Repository. After selecting the repository to clone, We 
+        <br>selected the directory to save the cloned repository. Then we click "Clone" to start the cloning 
+        <br>process. Once the cloning is complete, we navigate to the location of the cloned repository.
+        </p>
+        <img src="../2024ZWU-IS-3-Yes-or-yes/pm-1/pm-1-5.png">
+        <p>Clone with our github repository.</p>
+        <img src="../2024ZWU-IS-3-Yes-or-yes/pm-1/pm-1-6.png">
+        <p>Now we can open VS code.</p>
+        <h4>2.VS Code</h4>
+        <img src="../2024ZWU-IS-3-Yes-or-yes/pm-1/pm-1-7.png">
+        <p>In the VS code, We opened the terminal and New terminal.</p>
+        <img src="../2024ZWU-IS-3-Yes-or-yes/pm-1/pm-1-8.png">
+        <p>And by Writing "npm i docsify-cli -g" in the terminal and hit enter, we installed docsify.</p>
+        <img src="../2024ZWU-IS-3-Yes-or-yes/pm-1/pm-1-9.png">
+        <p>Next by Writing “ docsify init ./docs”in the terminal,the result is a failure to run.</p>
+        <h4>Notice:cannot be loaded because running scripts is disabled on this system</h4>
+        <img src="../2024ZWU-IS-3-Yes-or-yes/pm-1/pm-1-10.png">
+        <p>An error occurred during initialization docsify,can't load docsify.The reason is running mode is 
+        <br>strict ,we can change to Unrestricted or Bypass，
+        <br>use the following code Set-ExecutionPolicy -Scope CurrentUser-ExecutionPolicyUnrestricted-Force 
+        <br>or Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Bypass -Force.
+        </p>
+        <img src="../2024ZWU-IS-3-Yes-or-yes/pm-1/pm-1-11.png">
+        <p>Now we can start our production.</p>
+      <h2 id="section2">How to make a homepage</h2>
+      <h3 id="subsection2-1">副标题 2-1</h3>
+      <h3 id="subsection2-2">副标题 2-2</h3>
+
+      <h2 id="section3">How to make a personal web page</h2>
+      <h3 id="subsection3-1">副标题 3-1</h3>
+      <h3 id="subsection3-2">副标题 3-2</h3>
+
+      <h2 id="section4">How to use AI to assist production</h2>
+      <h3 id="subsection4-1">副标题 3-1</h3>
+      <h3 id="subsection4-2">副标题 3-2</h3>
+
+ 
+
 </body>
