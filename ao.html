@@ -53,12 +53,34 @@
     img{
         width: 300px;
         height: 200px;
+        margin-left: 30px;
     }
-    h1{font-size: 50px;
+    .gw{
+       margin-left: 30px; 
+    }
+    h1{
+    font-size: 50px;
     margin-top: 30px;
+    margin-left: 30px;
+    }
+    h2{
+    margin-left: 30px;
+    }
+    h4{
+    margin-left: 30px;
+    }
+    h3{
+    margin-left: 30px;
+    }
+    h5{
+    margin-left: 30px;
     }
     p{
+        margin-left: 30px;
         font-size: 12px;
+    }
+    .dm{
+        background-color: #222222;
     }
 </style>
 </head>
@@ -67,21 +89,25 @@
         <div id="sidebar">
           <!-- 侧边栏内容 -->
           <ul>
-            <li><a href="#section1">Learn open source hardwork</a></li>
-            <li><a href="#subsection1-1">副标题 1-1</a></li>
-            <li><a href="#subsection1-2">副标题 1-2</a></li>
-            <li><a href="#section2">Learn the Arduino IDE</a></li>
-            <li><a href="#subsection2-1">副标题 2-1</a></li>
-            <li><a href="#subsection2-2">副标题 2-2</a></li>
-            <li><a href="#section3">Run water light program</a></li>
+            <li><a href="#section1">01-Learn open source hardwork</a></li>
+            <li><a href="#subsection1-1">Raspberry PI</a></li>
+            
+            <li><a href="#section2">02-Learn the Arduino IDE</a></li>
+            <li><a href="#subsection2-1">The function of each part of the code box</a></li>
+            <li><a href="#subsection2-2">Coding method</a></li>
+            <li><a href="#subsection2-3">Hardware connect</a></li>
+
+            <li><a href="#section3">03-Run water light program</a></li>
             <li><a href="#subsection3-1">副标题 2-1</a></li>
             <li><a href="#subsection3-2">副标题 2-2</a></li>
-            <li><a href="#section4">Find some open source projects</a></li>
+
+            <li><a href="#section4">04-Find some open source projects</a></li>
             <li><a href="#subsection4-1">Case 1:Keep-emotional</a></li>
             <li><a href="#subsection4-2">Case 2:LedIT go</a></li>
             <li><a href="#subsection4-3">Case 3:+me</a></li>
             <li><a href="#subsection4-4">Case 4:O Snoot</a></li>
             <li><a href="#subsection4-5">Case 5:Vorkoster</a></li>
+
             <li><a href="dailyhomework.html">Return</a></li>
           </ul>
         </div>
@@ -90,20 +116,169 @@
             <h1>Arduino Output</h1>
         </header>
         
-        <h2 id="section1">Learn open source hardwork</h2>
-        <h3 id="subsection1-1">副标题 1-1</h3>
-        <h3 id="subsection1-2">副标题 1-2</h3>
+        <!--第一部分-->
+        <h2 id="section1">01-Learn open source hardwork</h2>
+        <h3 id="subsection1-1">Raspberry PI</h3>
+        <a href="https://www.edatec.cn/" class="gw">上海晶珩官网 (edatec.cn)</a>
+        <h4>Bolt monitoring system:</h4>
+        <h5>Hardware used:</h5>
+        <p>CM4 Nano edge computing Gateway (CM4 Nano edge computing gateway is extended with Raspberry PI CM4 core board, supports high 
+        <br>processing power, supports many scalability, supports AI computing expansion)
+        </p>
+        <h5>CM4 Nano Edge Computing Gateway:</h5>
+        <p>·ARM A72 1.5Ghz, 4-core, 64-bit
+        <br>·Memory 1/2/4/8GB, eMMC 8/16/32GB
+        <br>·WIFI/ Ethernet and other communication methods
+        </p>
+        <h5>CM4 Nano Edge Computing Gateway Performance:</h5>
+        <p>1. Data access: Support a variety of brand PLC data transmission, 10W+ level of Internet of Things data transmission capability, 
+        <br>100% data authenticity, 99.9% access stability.
+        <br>2. A variety of network functions: Support Ethernet, WIFI connection functions, with all-weather environment work ability.
+        <br>3. Real-time edge computing: Integrate edge computing capabilities, obtain and process data faster, reduce cloud service costs, 
+        <br>reduce traffic losses, and achieve hardware-level security.
+        </p>
+        <img src="../2024ZWU-IS-3-Yes-or-yes/ao-1/ao-1-1.png"> 
+        <p>Because the wind turbine is expensive and the use environment is harsh, during the operation process, it is subject to the 
+        <br>comprehensive effect of various loads such as vibration and torsion for a long time, and the connecting fasteners between the 
+        <br>components and components will have different degrees of damage. The bolt monitoring system monitors the bolt status through 
+        <br>the sensor, calculates the gateway to process the sensor data in time, and makes a comparative analysis of the bolt status. 
+        <br>And timely report the data to the cloud through the network. Easy to monitor device status in real time
+        </p>
+        <img src="../2024ZWU-IS-3-Yes-or-yes/ao-1/ao-1-2.png">
         
-        <h2 id="section2">Learn the Arduino IDE</h2>
-        <h3 id="subsection2-1">副标题 2-1</h3>
-        <h3 id="subsection2-2">副标题 2-2</h3>
+        <!--第二部分-->
+        <h2 id="section2">02-Learn the Arduino IDE</h2>
+        <p>The Arduino IDE (Integrated Development Environment) is an open source software developed by the Arduino team for writing, 
+        <br>compiling, and uploading code to the Arduino microcontroller board. Arduino is a popular open source hardware platform 
+        <br>that includes various models of microcontroller boards and corresponding software libraries for controlling physical devices 
+        <br>and sensors.
+        </p>
+        <h3 id="subsection2-1">1-The function of each part of the code box</h3>
+        <img src="../2024ZWU-IS-3-Yes-or-yes/ao-2/ao-2-1.PNG"> 
+        <h4>Part A:menu bar-Includes document menu, edit menu, program menu, tools menu and help menu</h4>
+        <h5>1.Document menu:</h5>
+        <img src="../2024ZWU-IS-3-Yes-or-yes/ao-2/ao-2-2.PNG">
+        <p>a.Samples:The environment built-in example program can be opened. Arduino comes with a lot of programs, including the basics,
+        <br>Digital,Analog and so on.</p>
+        <img src="../2024ZWU-IS-3-Yes-or-yes/ao-2/ao-2-3.PNG">
+        <p>b.Preference:You can choose the compiler's language, set the font size of the compiler, adjust the font size of the code and 
+        <br>many other functions.</p>
+        <img src="../2024ZWU-IS-3-Yes-or-yes/ao-2/ao-2-4.PNG">
+        <h5>2.Edit menu:</h5>
+        <img src="../2024ZWU-IS-3-Yes-or-yes/ao-2/ao-2-5.png">
+        <p>Edit the code, copy and paste, comment, indent, size, find and other functions</p>
+        <h5>3.Program menu:</h5>
+        <img src="../2024ZWU-IS-3-Yes-or-yes/ao-2/ao-2-6.png">
+        <p>Load libraries - Manage libraries: You can search various support libraries in the installation network, select the library to 
+        <br>be installed and click Install to download and install online, which is very convenient.</p>
+        <h5>4.Tools menu:</h5>
+        <img src="../2024ZWU-IS-3-Yes-or-yes/ao-2/ao-2-7.png">
+        <p>A.Serial port monitor and serial port plotter: Their role is to receive the data sent by Arduino to the computer, and display 
+        <br>in the monitor can set the accepted baud rate, line feed, automatic scrolling, etc.
+        <br>B.Development Board: Set the development board you use.
+        </p>
+        <img src="../2024ZWU-IS-3-Yes-or-yes/ao-2/ao-2-8.png">
+        <p>Port: Set the port required by the Arduino IDE download program, that is, the port through which the development board connects 
+        <br>to the compute</p>
+        <h4>Part B:tool bar-Includes compilation, upload, new program , open program , save program and Serial Monito</h4>
+        <img src="../2024ZWU-IS-3-Yes-or-yes/ao-2/ao-2-9.PNG">
+        <p>a.Compile: This button is used to check the correctness of your "syntax" or code. If your code has any syntax errors or undefined 
+        <br>variables, an error message will appear at the bottom of the IDE screen. At the same time, the offending line of code is marked 
+        <br>with a red background color for easy modification. But if it's correct, you'll see a message that the compilation is complete.
+        <br> 
+        <br>b.Upload: The most amazing button, through which we can upload the program to Arduino. Although the IDE will compile the code 
+        <br>before uploading, I think it is better to press the compile key before uploading.
+        <br> 
+        <br>c.New: Creates a blank page.
+        <br> 
+        <br>d.Open: This button allows you to open an existing draft and is used when you need to open a file that you have downloaded or used 
+        <br>before.
+        <br> 
+        <br>e.Save: Used to save your draft.
+        <br> 
+        <br>f.Serial monitor: that is, a serial port that can receive data sent by Arduino to the computer, often used for debugging code.
+        <h4>Part C:Code editing area-Write program code areas</h4>
+        <h4>Part D:status region-Display program compilation and upload messages, if the program error will have an error message</h4>
 
-        <h2 id="section3">Run water light program</h2>
+        </p>
+
+        <h3 id="subsection2-2">2-Coding method</h3>
+        <h4>2.1 Arduino coding basics</h4>
+        <p>Arduino programming is mainly done in the C/C++ language, but in the Arduino environment, the structure of the code is somewhat 
+        <br>different from that of traditional C/C++ programs. In Arduino programs, there is no main() function, but the setup() and 'loop()' 
+        <br>functions are used as the starting point of the program and the body of the loop.</p>
+        <h4>2.2 setup() function</h4>
+        <p>When the Arduino board is powered on or reset, the code in the setup() function executes immediately. This function is usually used 
+        <br>to perform initialization Settings, such as initializing variables, serial ports, I/O status, and so on. The code in the setup() 
+        <br>function is executed only once</p>
+        <h4>2.3 loop() function</h4>
+        <p>After the setup() function is executed, the Arduino enters the loop() function, which is an infinite loop in which the code is executed 
+        <br>over and over again, allowing the Arduino to keep working. In the loop() function, the main functions of the program are usually 
+        <br>implemented, such as driving various modules and collecting data.</p>
+        <h4>2.4 Sample code</h4>
+        <p>An example of a simple Arduino program for blinking LED lights on a control board is as follows:</p>
+        <div class="dm">
+        <p>void setup() {
+        <br>    pinMode(LED_BUILTIN, OUTPUT); // 将内置LED引脚设置为输出模式
+        <br>} 
+        <br>void loop() {
+        <br>    digitalWrite(LED_BUILTIN, HIGH); // 将LED引脚电平拉高，点亮LED
+        <br>    delay(1000);                     // 延时1秒
+        <br>    digitalWrite(LED_BUILTIN, LOW);  // 将LED引脚电平拉低，熄灭LED
+        <br>    delay(1000);                     // 延时1秒
+        <br>}</p>
+        </div>
+        <p>In this example, the setup() function initializes the built-in LED pin to output mode, the loop() function controls the switching of 
+        <br>the LED light through the digitalWrite() function, and the blinking frequency through the delay() function.</p>
+        <h4>2.5 Announcements</h4>
+        <h5>When writing Arduino code, you need to be aware of the following:</h5>
+        <p>- Ensure that the Arduino board is properly connected to the computer and that the correct board and port are selected in the IDE.
+        <br> 
+        <br>- pinMode(), digitalWrite(), delay() and other functions in the code are special functions provided by Arduino to simplify hardware control.
+        <br>
+        <br>- Debugging information can be easily printed in the IDE's Serial port monitor using functions such as serial.println ().
+        <br> 
+        <br>- Keep your code clear and easy to read, and use comments and indents wisely.
+        </p>
+
+
+        <h3 id="subsection2-3">3-Hardware connect</h3>
+        <h4>3.1 Overview of Arduino hardware connection methods</h4>
+        <p>Arduino is a popular open source electronic prototyping platform that includes various models of Arduino boards and corresponding software 
+        <br>(Arduino IDE). The Arduino board is usually composed of a single chip microcomputer (such as the AVR series ATmega328P, or ESP32, etc.), 
+        <br>pins (for connecting other electronic modules and sensors), a power interface, and a serial port or USB interface to communicate with the 
+        <br>computer.</p>
+        <h4>3.2 Basic hardware component</h4>
+        <p>- MCU: The core of the Arduino board, responsible for processing the input data from the sensor and controlling the peripherals.
+        <br> 
+        <br>- Pins: Used to connect various electronic modules and sensors, each pin has a specific function, such as digital I/O, analog I/O, PWM, SPI, 
+        <br>I2C, etc.
+        <br> 
+        <br>- Power port: Provides power for the Arduino board and connected modules.
+        <br> 
+        <br>- Communication interface: such as USB and serial port, used to connect the Arduino board to the computer, upload and download data.</p>
+        <h4>3.3 Common hardware connection steps</h4>
+        <p>a. Connect the power supply: First make sure the Arduino board is properly connected to the power supply, usually 5V DC power supply.
+        <br>
+        <br>b. Connect modules and sensors: Connect the required modules and sensors to the corresponding pins of the Arduino board using appropriate 
+        <br>interfaces (such as I2C, SPI, analog I/O, etc.).
+        <br>
+        <br>c. Upload code: Write code and upload it to the board through the Arduino IDE to control the behavior of the hardware.</p>
+        <h4>3.4 Sample wiring diagram</h4>
+        <h5>· Motor wiring diagram</h5>
+        <img src="../2024ZWU-IS-3-Yes-or-yes/ao-2/ao-2-10.jpg">
+        <h5>· Bluetooth module wiring diagram</h5>
+        <img src="../2024ZWU-IS-3-Yes-or-yes/ao-2/ao-2-11.jpg">
+        <h5>· Ultrasonic sensor wiring diagram</h5>
+        <img src="../2024ZWU-IS-3-Yes-or-yes/ao-2/ao-2-12.jpg">
+
+        <!--第三部分-->
+        <h2 id="section3">03-Run water light program</h2>
         <h3 id="subsection3-1">副标题 2-1</h3>
         <h3 id="subsection3-2">副标题 2-2</h3>
         
-        
-        <h2 id="section4">Find some open source projects</h2>  
+        <!--第四部分-->
+        <h2 id="section4">04-Find some open source projects</h2>  
         <h3 id="subsection4-1">Case 1:Keep-emotional</h3>
         <p>This project aims to develop a daily emotional recovery tool that leverages the relationship between the body and emotions. 
         <br>This is achieved through a glove device and screen image that can detect the sensitivity of human skin. The user touches 
