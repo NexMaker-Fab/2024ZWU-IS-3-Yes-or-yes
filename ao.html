@@ -51,8 +51,8 @@
         }
         /*图片大小*/
     img{
-        width: 300px;
-        height: 200px;
+        width: 600px;
+        height: 400px;
         margin-left: 30px;
     }
     .gw{
@@ -93,14 +93,17 @@
             <li><a href="#subsection1-1">Raspberry PI</a></li>
             
             <li><a href="#section2">02-Learn the Arduino IDE</a></li>
-            <li><a href="#subsection2-1">The function of each part of the code box</a></li>
-            <li><a href="#subsection2-2">Coding method</a></li>
-            <li><a href="#subsection2-3">Hardware connect</a></li>
+            <li><a href="#subsection2-1">1-The function of each part of the code box</a></li>
+            <li><a href="#subsection2-2">2-Coding method</a></li>
+            <li><a href="#subsection2-3">3-Hardware connect</a></li>
 
             <li><a href="#section3">03-Run water light program</a></li>
-            <li><a href="#subsection3-1">副标题 2-1</a></li>
-            <li><a href="#subsection3-2">副标题 2-2</a></li>
-
+            <li><a href="#subsection3-1">1-Installation library file</a></li>
+            <li><a href="#subsection3-2">2-Application code</a></li>
+            <li><a href="#subsection3-3">3-Circuit diagram</a></li>
+            <li><a href="#subsection3-4">4-Physical connection mode</a></li>
+            <li><a href="#subsection3-5">5-Water lamp effect display</a></li>
+        
             <li><a href="#section4">04-Find some open source projects</a></li>
             <li><a href="#subsection4-1">Case 1:Keep-emotional</a></li>
             <li><a href="#subsection4-2">Case 2:LedIT go</a></li>
@@ -178,7 +181,7 @@
         <br>B.Development Board: Set the development board you use.
         </p>
         <img src="../2024ZWU-IS-3-Yes-or-yes/ao-2/ao-2-8.png">
-        <p>Port: Set the port required by the Arduino IDE download program, that is, the port through which the development board connects 
+        <p>C.Port: Set the port required by the Arduino IDE download program, that is, the port through which the development board connects 
         <br>to the compute</p>
         <h4>Part B:tool bar-Includes compilation, upload, new program , open program , save program and Serial Monito</h4>
         <img src="../2024ZWU-IS-3-Yes-or-yes/ao-2/ao-2-9.PNG">
@@ -230,7 +233,7 @@
         </div>
         <p>In this example, the setup() function initializes the built-in LED pin to output mode, the loop() function controls the switching of 
         <br>the LED light through the digitalWrite() function, and the blinking frequency through the delay() function.</p>
-        <h4>2.5 Announcements</h4>
+        <h4 style="color: red;">2.5 Announcements</h4>
         <h5>When writing Arduino code, you need to be aware of the following:</h5>
         <p>- Ensure that the Arduino board is properly connected to the computer and that the correct board and port are selected in the IDE.
         <br> 
@@ -274,8 +277,124 @@
 
         <!--第三部分-->
         <h2 id="section3">03-Run water light program</h2>
-        <h3 id="subsection3-1">副标题 2-1</h3>
-        <h3 id="subsection3-2">副标题 2-2</h3>
+        <h3 id="subsection3-1">1-Installation library file</h3>
+        <img src="../2024ZWU-IS-3-Yes-or-yes/ao-3/ao-3-1.jpg">
+        <p>Step1:the library file compression package is downloaded to the computer.</p>
+        <img src="../2024ZWU-IS-3-Yes-or-yes/ao-3/ao-3-2.jpg">
+        <p>Step2:Compress the compressed package named <b>Adafruit NeoPixel-master.rar</b> with one click.</p>
+        <img src="../2024ZWU-IS-3-Yes-or-yes/ao-3/ao-3-3.jpg">
+        <p>Step3:Find the folder you extracted</p>
+        <img src="../2024ZWU-IS-3-Yes-or-yes/ao-3/ao-3-4.jpg">
+        <p>Step4:Open the folder named <b> NeoPixel-master.rar</b></p>
+        <img src="../2024ZWU-IS-3-Yes-or-yes/ao-3/ao-3-5.jpg">
+        <p>Step5:Find the folder named <b>Ardunio</b> in the folder named <b>Adafruit NeoPixel-master.rar</b></p>
+        <img src="../2024ZWU-IS-3-Yes-or-yes/ao-3/ao-3-6.png">
+        <p>Step6:Open the Arduino to find the sample in the edit, click <b>Adafruit NeoPixel</b> in the third party sample, and find the <b>strandtest wheel</b></p>
+
+        <h3 id="subsection3-2">2-Application code</h3>
+        <p>2.1 Sample code</p>
+        <div class="dm">
+            <p>#include <Adafruit_NeoPixel.h>
+            <br>    #ifdef __AVR__
+            <br>    #include <avr/power.h> 
+            <br>    #endif
+            <br>    #define LED_PIN    6
+            <br>    #define LED_COUNT 60
+            <br>    Adafruit_NeoPixel strip(LED_COUNT, LED_PIN, NEO_GRB + NEO_KHZ800);
+            <br>    void setup() {
+            <br>      #if defined(__AVR_ATtiny85__) && (F_CPU == 16000000)
+            <br>      clock_prescale_set(clock_div_1);
+            <br>      #endif
+            <br>      strip.begin();           
+            <br>      strip.show();            
+            <br>      strip.setBrightness(50); 
+            <br>    }
+            <br>    void loop() {
+            <br>      colorWipe(strip.Color(255,   0,   0), 50); 
+            <br>      colorWipe(strip.Color(  0, 255,   0), 50); 
+            <br>      colorWipe(strip.Color(  0,   0, 255), 50); 
+            <br>    
+            <br>      theaterChase(strip.Color(127, 127, 127), 50); 
+            <br>      theaterChase(strip.Color(127,   0,   0), 50); 
+            <br>      theaterChase(strip.Color(  0,   0, 127), 50); 
+            <br>    
+            <br>      rainbow(10);             
+            <br>      theaterChaseRainbow(50); 
+            <br>    }
+            <br>    
+            <br>    void colorWipe(uint32_t color, int wait) {
+            <br>      for(int i=0; i<=strip.numPixels(); i++) { 
+            <br>        strip.setPixelColor(i, color);         
+            <br>        strip.show();                          
+            <br>        delay(wait);                           
+            <br>      }
+            <br>    }
+            <br>    
+            <br>    void theaterChase(uint32_t color, int wait) {
+            <br>      for(int a=0; a<=10; a++) {  
+            <br>        for(int b=0; b<=3; b++) { 
+            <br>          strip.clear();         
+            <br>          for（int c=b; c<=strip.numPixels（）; c += 3） {
+            <br>            strip.setPixelColor(c, color); 
+            <br>          }
+            <br>          strip.show(); 
+            <br>          delay(wait); 
+            <br>        }
+            <br>      }
+            <br>    }
+            <br>    
+            <br>    void rainbow(int wait) {
+            <br>      for(long firstPixelHue = 0; firstPixelHue < 5*65536; firstPixelHue += 256) {
+            <br>        strip.rainbow(firstPixelHue);
+            <br>        strip.show();
+            <br>        delay(wait);  
+            <br>      }
+            <br>    }
+            <br>    
+            <br>    void theaterChaseRainbow(int wait) {
+            <br>      int firstPixelHue = 0;     
+            <br>      for(int a=0; a<=30; a++) {  
+            <br>        for(int b=0; b<=3; b++) { 
+            <br>          strip.clear();         
+            <br>          for（int c=b; c<=strip.numPixels(); c += 3) {
+            <br>            
+            <br>            Int hue = firstPixelHue + c*65536L / strip.numPixels();
+            <br>            uint32_t color = strip.gamma32(strip.ColorHSV(hue)); // hue -> RGB
+            <br>            strip.setPixelColor(c, color); 
+            <br>          }
+            <br>          strip.show();                
+            <br>          delay(wait);                 
+            <br>          firstPixelHue += 65536 / 90; 
+            <br>        }
+            <br>      }
+            <br>    }
+            </p>
+        </div>
+        <p>
+        <br>2.2 Debug code 
+        </p>
+        <img src="../2024ZWU-IS-3-Yes-or-yes/ao-3/ao-3-7.jpg">
+        <div class="dm">
+            <p style="color: red;">
+                #define LED_PIN    6
+            <br>#define LED_COUNT 8   
+            <br>Adafruit_NeoPixel strip(8, 6, NEO_GRB + NEO_KHZ800);
+            </p>
+            <p>The number of blocks changed from 60 to 8，Change the input PIN from LED PIN to 6.</p>
+        </div>
+
+        <h3 id="subsection3-3">3-Circuit diagram</h3>
+        <img src="../2024ZWU-IS-3-Yes-or-yes/ao-3/ao-3-8.jpg">
+        <img src="../2024ZWU-IS-3-Yes-or-yes/ao-3/ao-3-9.jpg">
+        <p>These two drawings show the circuit diagram of the flow lamp</p>
+
+        <h3 id="subsection3-4">4-Physical connection mode</h3>
+        <img src="../2024ZWU-IS-3-Yes-or-yes/ao-3/ao-3-10.jpg">
+        <p>This picture shows the physical connection of the water lamp</p>
+
+        <h3 id="subsection3-5">5-Water lamp effect display</h3>
+        <img src="../2024ZWU-IS-3-Yes-or-yes/ao-3/ao-3-11.gif">
+        <p>This .gif shows the flow light in motion</p>
         
         <!--第四部分-->
         <h2 id="section4">04-Find some open source projects</h2>  
