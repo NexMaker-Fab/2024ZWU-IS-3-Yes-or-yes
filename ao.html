@@ -79,8 +79,13 @@
         margin-left: 30px;
         font-size: 12px;
     }
-    .dm{
-        background-color: #222222;
+    pre{
+      background-color: #222222;
+      padding: 60px;
+    }
+    code{
+      font-size: 12px;
+      color: white;
     }
 </style>
 </head>
@@ -220,17 +225,18 @@
         <br>implemented, such as driving various modules and collecting data.</p>
         <h4>2.4 Sample code</h4>
         <p>An example of a simple Arduino program for blinking LED lights on a control board is as follows:</p>
-        <div class="dm">
-        <p>void setup() {
-        <br>    pinMode(LED_BUILTIN, OUTPUT); // 将内置LED引脚设置为输出模式
-        <br>} 
-        <br>void loop() {
-        <br>    digitalWrite(LED_BUILTIN, HIGH); // 将LED引脚电平拉高，点亮LED
-        <br>    delay(1000);                     // 延时1秒
-        <br>    digitalWrite(LED_BUILTIN, LOW);  // 将LED引脚电平拉低，熄灭LED
-        <br>    delay(1000);                     // 延时1秒
-        <br>}</p>
-        </div>
+        <pre><code>
+        void setup() {
+            pinMode(LED_BUILTIN, OUTPUT); // Set the built-in LED pin to output mode
+        } 
+        void loop() {
+            digitalWrite(LED_BUILTIN, HIGH); // Pull the LED pin level high to light the LED
+            delay(1000);                     // Delay 1 second
+            digitalWrite(LED_BUILTIN, LOW);  // Pull the LED pin flat and turn off the LED
+            delay(1000);                     // Delay 1 second
+        }
+        </code></pre>
+
         <p>In this example, the setup() function initializes the built-in LED pin to output mode, the loop() function controls the switching of 
         <br>the LED light through the digitalWrite() function, and the blinking frequency through the delay() function.</p>
         <h4 style="color: red;">2.5 Announcements</h4>
@@ -293,96 +299,93 @@
 
         <h3 id="subsection3-2">2-Application code</h3>
         <p>2.1 Sample code</p>
-        <p style="color: red;">Note: where <= should be <</p>
-        <div class="dm">
-            <p>#include <Adafruit_NeoPixel.h>
-            <br>    #ifdef __AVR__
-            <br>    #include <avr/power.h> 
-            <br>    #endif
-            <br>    #define LED_PIN    6
-            <br>    #define LED_COUNT 60
-            <br>    Adafruit_NeoPixel strip(LED_COUNT, LED_PIN, NEO_GRB + NEO_KHZ800);
-            <br>    void setup() {
-            <br>      #if defined(__AVR_ATtiny85__) && (F_CPU == 16000000)
-            <br>      clock_prescale_set(clock_div_1);
-            <br>      #endif
-            <br>      strip.begin();           
-            <br>      strip.show();            
-            <br>      strip.setBrightness(50); 
-            <br>    }
-            <br>    void loop() {
-            <br>      colorWipe(strip.Color(255,   0,   0), 50); 
-            <br>      colorWipe(strip.Color(  0, 255,   0), 50); 
-            <br>      colorWipe(strip.Color(  0,   0, 255), 50); 
-            <br>    
-            <br>      theaterChase(strip.Color(127, 127, 127), 50); 
-            <br>      theaterChase(strip.Color(127,   0,   0), 50); 
-            <br>      theaterChase(strip.Color(  0,   0, 127), 50); 
-            <br>    
-            <br>      rainbow(10);             
-            <br>      theaterChaseRainbow(50); 
-            <br>    }
-            <br>    
-            <br>    void colorWipe(uint32_t color, int wait) {
-            <br>      for(int i=0; i<=strip.numPixels(); i++) { 
-            <br>        strip.setPixelColor(i, color);         
-            <br>        strip.show();                          
-            <br>        delay(wait);                           
-            <br>      }
-            <br>    }
-            <br>    
-            <br>    void theaterChase(uint32_t color, int wait) {
-            <br>      for(int a=0; a<=10; a++) {  
-            <br>        for(int b=0; b<=3; b++) { 
-            <br>          strip.clear();         
-            <br>          for（int c=b; c<=strip.numPixels（）; c += 3） {
-            <br>            strip.setPixelColor(c, color); 
-            <br>          }
-            <br>          strip.show(); 
-            <br>          delay(wait); 
-            <br>        }
-            <br>      }
-            <br>    }
-            <br>    
-            <br>    void rainbow(int wait) {
-            <br>      for(long firstPixelHue = 0; firstPixelHue < 5*65536; firstPixelHue += 256) {
-            <br>        strip.rainbow(firstPixelHue);
-            <br>        strip.show();
-            <br>        delay(wait);  
-            <br>      }
-            <br>    }
-            <br>    
-            <br>    void theaterChaseRainbow(int wait) {
-            <br>      int firstPixelHue = 0;     
-            <br>      for(int a=0; a<=30; a++) {  
-            <br>        for(int b=0; b<=3; b++) { 
-            <br>          strip.clear();         
-            <br>          for（int c=b; c<=strip.numPixels(); c += 3) {
-            <br>            
-            <br>            Int hue = firstPixelHue + c*65536L / strip.numPixels();
-            <br>            uint32_t color = strip.gamma32(strip.ColorHSV(hue)); // hue -> RGB
-            <br>            strip.setPixelColor(c, color); 
-            <br>          }
-            <br>          strip.show();                
-            <br>          delay(wait);                 
-            <br>          firstPixelHue += 65536 / 90; 
-            <br>        }
-            <br>      }
-            <br>    }
-            </p>
-        </div>
+        <pre><code>
+                #include &lt;Adafruit_NeoPixel.h&gt;
+                #ifdef __AVR__
+                #include &lt;avr/power.h&gt; 
+                #endif
+                #define LED_PIN    6
+                #define LED_COUNT 60
+                Adafruit_NeoPixel strip(LED_COUNT, LED_PIN, NEO_GRB + NEO_KHZ800);
+                void setup() {
+                  #if defined(__AVR_ATtiny85__) && (F_CPU == 16000000)
+                  clock_prescale_set(clock_div_1);
+                  #endif
+                  strip.begin();           
+                  strip.show();            
+                  strip.setBrightness(50); 
+                }
+                void loop() {
+                  colorWipe(strip.Color(255,   0,   0), 50); 
+                  colorWipe(strip.Color(  0, 255,   0), 50); 
+                  colorWipe(strip.Color(  0,   0, 255), 50); 
+                
+                  theaterChase(strip.Color(127, 127, 127), 50); 
+                  theaterChase(strip.Color(127,   0,   0), 50); 
+                  theaterChase(strip.Color(  0,   0, 127), 50); 
+                
+                  rainbow(10);             
+                  theaterChaseRainbow(50); 
+                }
+                
+                void colorWipe(uint32_t color, int wait) {
+                  for(int i=0; i&lt;strip.numPixels(); i++) { 
+                    strip.setPixelColor(i, color);         
+                    strip.show();                          
+                    delay(wait);                           
+                  }
+                }
+                
+                void theaterChase(uint32_t color, int wait) {
+                  for(int a=0; a&lt;10; a++) {  
+                    for(int b=0; b&lt;3; b++) { 
+                      strip.clear();         
+                      for（int c=b; c&lt;strip.numPixels（）; c += 3） {
+                        strip.setPixelColor(c, color); 
+                      }
+                      strip.show(); 
+                      delay(wait); 
+                    }
+                  }
+                }
+                
+                void rainbow(int wait) {
+                  for(long firstPixelHue = 0; firstPixelHue &lt; 5*65536; firstPixelHue += 256) {
+                    strip.rainbow(firstPixelHue);
+                    strip.show();
+                    delay(wait);  
+                  }
+                }
+                
+                void theaterChaseRainbow(int wait) {
+                  int firstPixelHue = 0;     
+                  for(int a=0; a&lt;30; a++) {  
+                    for(int b=0; b&lt;3; b++) { 
+                      strip.clear();         
+                      for（int c=b; c&lt;strip.numPixels(); c += 3）{
+                        
+                        Int hue = firstPixelHue + c*65536L / strip.numPixels();
+                        uint32_t color = strip.gamma32(strip.ColorHSV(hue)); // hue -> RGB
+                        strip.setPixelColor(c, color); 
+                      }
+                      strip.show();                
+                      delay(wait);                 
+                      firstPixelHue += 65536 / 90; 
+                    }
+                  }
+                }
+            </code></pre>
         <p>
         <br>2.2 Debug code 
         </p>
         <img src="../2024ZWU-IS-3-Yes-or-yes/ao-3/ao-3-7.jpg">
-        <div class="dm">
-            <p style="color: red;">
-                #define LED_PIN 6
-            <br>#define LED_COUNT 8   
-            <br>Adafruit_NeoPixel strip(8, 6, NEO_GRB + NEO_KHZ800);
-            </p>
-            <p>The number of blocks changed from 60 to 8，Change the input PIN from LED PIN to 6.</p>
-        </div>
+        <pre><code>
+            #define LED_PIN 6
+            #define LED_COUNT 8   
+            Adafruit_NeoPixel strip(8, 6, NEO_GRB + NEO_KHZ800);
+        </code></pre>    
+        <p>The number of blocks changed from 60 to 8，Change the input PIN from LED PIN to 6.</p>
+        
 
         <h3 id="subsection3-3">3-Circuit diagram</h3>
         <img src="../2024ZWU-IS-3-Yes-or-yes/ao-3/ao-3-8.jpg">
