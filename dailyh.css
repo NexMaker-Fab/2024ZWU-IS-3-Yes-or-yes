@@ -37,20 +37,17 @@ body{
         position: fixed;
         top: 100;
         right: 10px;
-        width: 300px;
+        width: 500px;
         height: auto;
         background-color: transparent;
         border: none;
         padding: 10px;
         font-size: 24px;
+        box-sizing: border-box;
         }
         #sidebar ul {
         list-style-type: none;
         padding: 0;
-        }
-    
-        #sidebar li {
-        margin-bottom: 10px;
         }
     
         #sidebar a {
@@ -59,7 +56,10 @@ body{
         }
     
         #sidebar a:hover {
-        color: #4c4c4d;
+          color: #4c4c4d;
+          }
+        #sidebar a:active{
+          background-color:#4c4c4d;
         }
         /*代碼*/
         pre{
@@ -70,3 +70,7 @@ body{
             font-size: 12px;
             color: white;
           }
+        pre{
+          background-color: #222222;
+          padding: 60px;
+        }
