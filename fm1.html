@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Yes-or-yes</title>
+    <style>
+        
+        /* 设置页面的背景图片 */
+        body{
+            
+            background-image: url("back.png");
+            background-size: cover;/* 使背景图片填满页面 */
+            background-repeat: no-repeat;/* 不重复背景图片 */
+            background-attachment: fixed; /*背景图片固定位置*/
+            background-position: center center;/* 使背景图片居中 */   
+            
+        }
+        /*设置导航栏样式*/
+        .navlist {
+        position: fixed;
+        top: 0;
+        right: 10px;/*导航栏位置*/
+        overflow: hidden;
+        background: transparent;/*导航栏背景颜色为透明*/
+        }
+        .navlist a{
+        float: left;/*列表变横向*/
+        display: block;/*导航栏每个链接独立分块*/
+        color: white;/*导航栏文字颜色为白色*/
+        text-align: center;/*导航栏文字居中*/
+        padding: 12px 16px;
+        text-decoration: none;/*取消导航栏文字下划线*/
+        font-size: 20px;/*导航栏文字大小*/
+        }
+        .navlist a:hover{
+        background: white;
+        color: black;/*鼠标移动上，导航栏对于模块背景色变白，字体颜色变黑*/
+        }
+        /*设置按钮样式*/
+        .button1{
+            display: flex;
+            align-items: center;
+            justify-content: center;/*使内容水平居中*/
+            background-color: transparent;/*按钮背景颜色为透明*/
+            color: white;/*字体颜色*/
+            width: 155px;
+            height: 60px;/*按钮长宽*/
+            border-radius: 50px;/*矩形圆角程度*/
+            text-align: center;
+            text-decoration: none;/*取消按钮文字下划线*/
+            font-size: 30px;/*文字大小*/
+            border: 1px solid white;/*按钮边框粗细和边框颜色*/
+            position: absolute;
+            top: 780px;
+            left: 580px;/*按钮位置*/
+            cursor: pointer;/*鼠标移动至按钮上后，光标样式为手形图标*/
+        }
+        .button2{
+            display: flex;
+            align-items: center;/*使内容水平居中*/
+            justify-content: center;
+            background-color: transparent;
+            color: white;
+            width: 255px;
+            height: 60px;/*按钮长宽*/
+            border-radius: 50px;/*矩形圆角程度*/
+            text-align: center;
+            text-decoration: none;
+            font-size: 30px;
+            border: 1px solid white;            
+            position: absolute;
+            top: 780px;
+            left: 780px;/*按钮位置*/
+            cursor: pointer;/*光标样式为手形图标*/
+        }
+        .button3{
+            display: flex;
+            align-items: center;/*使内容水平居中*/
+            justify-content: center;
+            background-color: transparent;
+            color: white;
+            width: 190px;
+            height: 60px;/*按钮长宽*/
+            border-radius: 50px;/*矩形圆角程度*/
+            text-align: center;
+            text-decoration: none;
+            font-size: 30px;
+            border: 1px solid white;
+            position: absolute;
+            top: 780px;
+            left: 1080px;/*按钮位置*/
+            cursor: pointer;/*光标样式为手形图标*/
+        }
+        /*设置文字位置样式*/
+        .center-container{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;/*使文字横向居中*/
+            align-items: center; 
+            min-height: 100vh; /* 设置最小高度为视口高度 */
+            text-align: center;
+            color:white;/*设置文字颜色*/
+
+        }
+        h1{
+            font-size: 150px;/*设置大标题字体大小*/
+            margin-top: 0px;/*设置大标题纵向位置*/
+        }
+        p{
+            font-size: 24px;
+            font-weight: 300;/*设置副标题字体粗细*/
+            margin-top: 180px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="navlist">
+        <!--放入列表-->
+          <a href="index.html">Home</a>
+          <a href="dailyhomework.html">Daily Homework</a>
+          <a href="finalproject.html">Final Project</a>
+          <a href="Aboutus.html">About us</a> <!--将对应网页文件链接到导航栏模块上-->
+    </div>
+    <header>
+        <div class="center-container">
+        <h1>Yes Or Yes</h1>
+        <p>Welcome to our team's web page!</p>
+    </header>
+    <a href="Aboutus.html" class="button1">About us</a>
+    <a href="dailyhomework.html" class="button2">Daily Homework</a>
+    <a href="finalproject.html" class="button3">Final Project</a><!--将对应网页文件链接到对应按钮上-->
+</body>
+</html>
