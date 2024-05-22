@@ -27,39 +27,38 @@ body{
     font-size: 24px;
     margin-left: 30px;
     }
+    h6{
+      font-size: 22px;
+      margin-left: 30px;
+      }
     p{
     font-size: 20px;
     margin-left: 30px;
     }
     /*侧边栏样式*/
     #sidebar {
-        position: fixed;
-        top: 100;
-        right: 10px;
-        width: 500px;
-        height: auto;
-        background-color: transparent;
-        border: none;
-        padding: 10px;
-        font-size: 24px;
-        box-sizing: border-box;
+        position: fixed;/*设置侧边栏固定在相对于窗口的某一位置，不受页面滚动影响*/
+        top: 100;/*设置侧边栏距离网站顶部距离*/
+        right: 10px;/*设置侧边栏距离网站右侧距离*/
+        width: 500px;/*设置侧边栏宽度*/
+        height: auto;/*元素告诉根据内容自动调整*/
+        background-color: transparent;/*设置侧边栏底部颜色为透明*/
+        border: none;/*侧边栏无边框*/
+        box-sizing: border-box;/*侧边栏的实际属性就是前面定义的高和宽*/
         }
-        #sidebar ul {
-        list-style-type: none;
-        padding: 0;
+    #sidebar ul {     /*侧边栏内部无序列表的部分*/
+        list-style-type: none;   /*移除列表前的默认标记*/
         }
     
-        #sidebar a {
-        text-decoration: none;
-        color: white;
+    #sidebar a {      /*选择侧边栏内部的a元素*/
+        text-decoration: none; /*删除链接的下划线*/
+        color: white;    /*文本颜色为白色*/
         }
     
-        #sidebar a:hover {
-          color: #4c4c4d;
+    #sidebar a:hover {    /*鼠标悬停在a元素上时*/
+          color: #4c4c4d;   /*文字颜色变成灰色*/
           }
-        #sidebar a:active{
-          background-color:#4c4c4d;
-        }
+
         /*代碼*/
         pre{
             background-color: #222222;
