@@ -22,7 +22,9 @@
         width: 900px;
         margin-left: 30px;
         }
-
+        .gw{
+       margin-left: 30px; 
+    }
 </style>
 </head>
 <body>
@@ -31,16 +33,14 @@
         <ul>
           
           <a href="#section1"><h5>01-Learn the processing</h5></a>
-          <a href="#subsection1-1"><p>Step1:Get the equipment</p></a>
-          <a href="#subsection1-2"><p>Step2:Set the pag</p></a>
-          <a href="#subsection1-3"><p>Step3:Local setup</p></a>
-          <a href="#subsection1-4"><p>Step4:Add collaborators</p></a>
+          <a href="#subsection1-1"><p>1-1 The function of each part of the code box</p></a>
+          <a href="#subsection1-2"><p>1-2 Processing coding method</p></a>
+          <a href="#subsection1-3"><p>1-3 Similar software introduction</p></a>
 
-          <a href="#section2"><h5>02-Processing project</h5></a>
-          <a href="#subsection2-1"><p>A-How to set the background image</p></a>
-          <a href="#subsection2-2"><p>B-How to set the navbar style</p></a>
-          <a href="#subsection2-3"><p>C-How to set the button style</p></a>
-          <a href="#subsection2-4"><p>D-How to set the title and subtitle text position</p></a>
+          <a href="#section2"><h5>02-Processing Interactive project</h5></a>
+          <a href="#subsection2-1"><p>2-1 Project introduction</p></a>
+          <a href="#subsection2-2"><p>2-2 Code</p></a>
+          <a href="#subsection2-3"><p>2-3 Effect</p></a>
 
           <a href="#section3"><h5>03-processing & arduino</h5></a>
           <a href="#subsection3-1"><p>3-1 Using Procssing to control Arduino</p></a>
@@ -56,13 +56,108 @@
     </header>
     <!--第一部分-->
     <section id="section1"><h2>01 Learn the processing</h2>
-    <section id="subsection1-1"><h3>3-1 Using Procssing to control Arduino</h3>
-    <section id="subsection1-2"><h3>3-2 Using Arduino to control Processing</h3>
+    <a href="https://processing.org//" class="gw">Official website of Processing(processing.org)</a>
+    <p>Processing is an easy to learn and powerful software that is especially suitable for designers. It provides simple and intuitive 
+    <br>syntax and rich graphics processing capabilities, allowing users to easily create interactive works and motion graphics.
+    <br><b>peculiarity:</b>
+    <br>1. Ease of use: The concise syntax makes it easy to use
+    <br>2. Community support: There is a large and active community where users can share and communicate with each other, and also provides 
+    <br>opportunities for collaboration
+    <br>3. Creative: suitable for creating interactive devices, data visualization and other visual art works</p>
+    <section id="subsection1-1"><h3>1-1 The function of each part of the code box</h3>
+    <img src="./iap-1/iap-1-1.png">
+    <p><b>a. Menu bar:</b> located at the top of the window, it contains commonly used function buttons, such as documents, sketches, etc
+    <br><b>b. Code area:</b> This is the main area of coding where users can write and edit Processing code.     
+    <br><b>c. Output area:</b> located below or next to the editing area, it is used to display the output information of the program, such 
+    <br>as the result of printed statements, error information and debugging information.
+    <br><b>d. Mode selection:</b> Processing provides two modes: Java mode and JavaScript mode. Java pattern is used for traditional desktop 
+    <br>application development, while JavaScript pattern is used for Web development. Users can switch modes in the toolbar or menu.</p>
+    <img src="./iap-1/iap-1-2.png">
+    <p><b>a. Start:</b> Start running the program
+    <br><b>b. Stop:</b> Stop running the program</p>
+    <img src="./iap-1/iap-1-3.png">
+    <p><b>A. New:</b> Clicking will create a new window with a new, empty editing area where you can start writing new code.
+    <br><b>b. Sample programs:</b> Usually contains a number of preset sample programs that demonstrate various programming concepts and 
+    <br>techniques. Users can select these sample programs to learn and understand how Processing works.
+    <br><b>c. Preferences:</b> Preferences allow users to configure various parameters of the Processing IDE according to their preferences 
+    <br>and needs.</p>
+    <img src="./iap-1/iap-1-4.png">
+    <p>You can change the editor's fonts, languages, color themes, code indent Settings, and more.</p>
+    <img src="./iap-1/iap-1-5.png">
+    <p>The Run button is used to execute the currently selected sketch, the Adjust button allows the user to modify the Settings or      
+    <br>parameters of the sketch, and the Stop button is used to stop the running sketch. These buttons are usually located in the toolbar of the 
+    <br>sketchbook application.</p>
 
+    <section id="subsection1-2"><h3>1-2 Processing coding method</h3>
+    <p><b>1. Data Types</b>
+    <br>Processing provides several built-in data types, including integers (int) floating point numbers (float) Booleans (boolean) 
+    <br>characters (char) and strings (string).
+    <br>  
+    <br><b>2. Data Variables</b>
+    <br>Variables are used to store data values, they must be announced before use, and can be local variables (visible only inside 
+    <br>the function) or global variables (visible throughout the program)
+    <br>  
+    <br><b>3. Operators</b>
+    <br>These include arithmetic operators (e.g. +, -, *, /), comparison operators (e.g. = =, >, <), and logical operators (e.g.!). Etc.
+    <br> 
+    <br><b>4. input function input()</b>
+    <br>Used to get a line of text that the user entered from the console. The function pauses program execution until the user enters 
+    <br>some text and presses the enter key.
+    <br>  
+    <br><b>5. Output function print()</b>
+    <br>Used to print any type of data. It can print strings, integers, floating-point numbers, etc., and can print multiple items consecutively.
+    <br>  
+    <br><b>6. Loop statements :</b>for,while,do while
+    <br>Loop to execute blocks of code repeatedly.
+    <br> 
+    <br><b>7. Conditional statements :</b>if, else if, else
+    <br>Statements can be combined to execute code based on multiple conditions.</p>
+
+    <section id="subsection1-3"><h3>1-3 Similar software introduction</h3>
+    <h4>Touch Designer</h4>
+    <a href="https://derivative.ca/" class="gw">Official website of Touch Designer(derivative.ca)</a>
+    <p>Touch Designer is a powerful real-time interactive visual programming platform that allows artists and designers to create complex 
+    <br>multimedia content through intuitive node manipulation, which is widely used in stage performances, installation art, visual effects 
+    <br>and more. 
+    <br>The power of Touch Designer lies in its flexibility and extensibility, allowing users to customize various visual effects and interactions 
+    <br>according to their needs. Whether you are an artist, designer or engineer, TouchDesigner is an ideal choice for the fusion of creativity 
+    <br>and technology.</p>
+    <img src="./iap-1/iap-1-6.png">
+
+
+    
     <!--第二部分-->
-    <section id="section2"><h2>02 processing project</h2>
-    <section id="subsection2-1"><h3>3-1 Using Procssing to control Arduino</h3>
-    <section id="subsection2-2"><h3>3-2 Using Arduino to control Processing</h3>
+    <section id="section2"><h2>02 Processing Interactive project</h2>
+    <section id="subsection2-1"><h3>2-1 Project introduction </h3>
+    <p>The processing interaction is to draw an ellipse at the current position of the mouse, and its size and color are dynamically 
+    <br>adjusted according to the position of the mouse</p>
+    <section id="subsection2-2"><h3>2-2 Code</h3>
+    <pre><code>
+//5.27 by Zhao Yuer
+
+void setup () {  //This is a special function that performs an initialization operation once the program starts running
+size (600,800) ;  //The two values entered represent pixels and are commands to change the size of the window
+background (255, 255, 255) ;  //Sets the background color of the drawing window. This code sets the background color to plain white
+}
+void draw(){   //epresents the main drawing loop, where the program continues to execute the code in the draw() function until the program 
+                is stopped or terminated
+frameRate (8) ； //Set the frame rate to 8 frames per second
+
+fill (random (200, 255), random (200, 255), random (200, 255), 100) ;  //The fill() function is used to set the fill color for the drawing, 
+                                                                      where the red, green, and blue components are between 200 and 255, and 
+                                                                      the transparency is set to 100
+
+float r=map (mouseX, 0, 100, 30, 70)； //Map the position of the mouse in the horizontal direction from a range of 0 to 100 to a range of 
+                                        30 to 70, and save the result in the variable r
+
+noStroke () ;ellipse (mouseX, mouseY, r, r) ；//Draw an ellipse without a border at the current position of the mouse, the size of which 
+                                              dynamically adjusts as the mouse position changes to a range of 100 mapped to a range of 
+                                              30 to 70, and save the result in the variable r
+}
+    </code></pre>
+    <section id="subsection2-3"><h3>2-3 Effect</h3>
+    <img src="./iap-2/iap-2-1.gif">
+
 
     <!--第三部分-->
     <section id="section3"><h2>03 processing & arduino</h2>
@@ -121,6 +216,7 @@ void draw(){
     <img src="./iap-3/iap-3-2.jpg">
     <h4>Effect display</h4>
     <img src="./iap-3/iap-3-3.gif">
+
     <section id="subsection3-2"><h3>3-2 Using Arduino to control Processing</h3>
     <h4>Project introduction</h4>
     <p><b>continuous item:</b>The mouse in the rectangle position to change the led light light.</p>
