@@ -30,11 +30,12 @@
         <!-- 侧边栏内容 -->
         <ul>
           
-          <a href="#section1"><h5>How to configure a website</h5></a>
-          <a href="#subsection1-1"><p>Step1:Get the equipment</p></a>
-          <a href="#subsection1-2"><p>Step2:Set the pag</p></a>
-          <a href="#subsection1-3"><p>Step3:Local setup</p></a>
-          <a href="#subsection1-4"><p>Step4:Add collaborators</p></a>
+          <a href="#section1"><h5>Stress visualization program</h5></a>
+          <a href="#subsection1-1"><p>1-Project introduction</p></a>
+          <a href="#subsection1-2"><p>2-Code</p></a>
+          <a href="#subsection1-3"><p>3-Circuit diagram</p></a>
+          <a href="#subsection1-4"><p>4-Physical connection mode</p></a>
+          <a href="#subsection1-5"><p>5-Effect display</p></a>
 
           <a href="../dailyhomework.html"><h5>Return</h5></a>
         </ul>
@@ -44,7 +45,52 @@
     <header>
         <h1>Arduino Input</h1>
     </header>
-    <section id="section1"><h2>Learn the processing</h2>
-    <section id="subsection1-1"><h3>Using Procssing to control Arduino</h3>
-    <section id="subsection1-2"><h3>Using Arduino to control Processing</h3>
+    <section id="section1"><h2>Stress visualization program</h2>
+    <section id="subsection1-1"><h3>1-Project introduction</h3>
+    <p>The light bulb is first connected to the circuit board, and then the FSR pressure sensor is also connected, 
+    <br>so that the color of the light bulb can be changed by the pressure of the sensor through the ardunio program.
+    </p>
+    <section id="subsection1-2"><h3>2-Code</h3>
+    <pre><code>
+//2024.5.27 by JinXuan
+// Define the pins connected to Arduino
+const int sensorPin = A0; // Pressure sensor connected to A0
+const int switchPin = 2; // Switch connected to D2
+const int redLEDpin = 3; // Red LED connected to D3
+const int greenLEDpin = 4; // Green LED connected to D4
+
+// Define thresholds
+const int lowThreshold = 70; // Low pressure threshold
+const int highThreshold = 80; // High pressure threshold
+
+void setup() {
+Serial.begin(9600); // Initialize serial communication
+pinMode(sensorPin, INPUT); // Set pressure sensor pin as input
+pinMode(switchPin, INPUT_PULLUP); // Set switch pin as input and enable internal pull-up resistor
+pinMode(redLEDpin, OUTPUT); // Set red LED pin as output
+pinMode(greenLEDpin, OUTPUT); // Set green LED pin as output
+}
+
+void loop() {
+// Read the analog value of the pressure sensor
+int sensorValue = analogRead(sensorPin);
+
+if (sensorValue &lt lowThreshold) {
+digitalWrite(greenLEDpin, HIGH); // Turn on green LED
+digitalWrite(redLEDpin, LOW); // Turn off red LED
+} else if (sensorValue &gt highThreshold) {
+digitalWrite(greenLEDpin, LOW); // Turn off green LED
+digitalWrite(redLEDpin, HIGH); // Turn on red LED
+}
+
+// To avoid high CPU usage, add a short delay here
+delay(50);
+}
+    </code></pre>
+    <section id="subsection1-3"><h3>3-Circuit diagram</h3>
+    <img src="./ai-1/ai-1-1.png">
+    <section id="subsection1-4"><h3>4-Physical connection mode</h3>
+    <section id="subsection1-5"><h3>5-Effect display</h3>
+    <img src="./ai-1/ai-1-3.gif">
+
   
