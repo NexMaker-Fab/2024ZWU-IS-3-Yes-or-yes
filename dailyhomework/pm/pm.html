@@ -39,7 +39,7 @@
           <a href="#section2"><h5>02 How to make a homepage</h5></a>
           <a href="#subsection2-1"><p>A-How to set the background image</p></a>
           <a href="#subsection2-2"><p>B-How to set the navbar style</p></a>
-          <a href="#subsection2-3"><p>C-How to set the button style</p></a>
+          <a href="#subsection2-3"><p>C-How to set the flot style</p></a>
           <a href="#subsection2-4"><p>D-How to set the title and subtitle text position</p></a>
 
           <a href="#section3"><h5>03 How to build the web in github</h5></a>
@@ -137,6 +137,126 @@
       <!--第二部分-->
       <section id="section2"><h2>02 How to make a homepage</h2>
       <img src="./pm-2/pm-2-1.PNG">
+      <h3>Complete code</h3>
+      <pre><code>
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yes-or-yes</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        img{
+        width: 400px;
+        height: 600px;
+        }
+        /*设置导航栏样式*/
+        .navlist {
+        position: fixed;
+        top: 0;
+        right: 10px;/*导航栏位置*/
+        overflow: hidden;
+        background: transparent;/*导航栏背景颜色为透明*/
+        }
+        .navlist a{
+        float: left;/*列表变横向*/
+        display: block;/*导航栏每个链接独立分块*/
+        color: white;/*导航栏文字颜色为白色*/
+        text-align: center;/*导航栏文字居中*/
+        padding: 12px 16px;
+        text-decoration: none;/*取消导航栏文字下划线*/
+        font-size: 20px;/*导航栏文字大小*/
+        }
+        .navlist a:hover{
+        background: white;
+        color: black;/*鼠标移动上，导航栏对于模块背景色变白，字体颜色变黑*/
+        }
+        body{
+            background-image: url(./home/back.png); /* 指定背景图片 */
+            background-size: cover; /* 覆盖整个视口 */
+            background-repeat: no-repeat; /* 不重复背景图片 */
+            background-attachment: fixed; /* 背景图片固定不动 */
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: black;
+            overflow: hidden;
+        }
+        .container{
+            position: relative;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container .card{
+            transform: translateY(100px);
+            transform: translateX(140px);
+            position: absolute;
+            width: 400px;
+            height: 600px;
+            background-color: white;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: none;
+            transition: .5s;
+            transform-origin: 50% 100%;
+        }
+        .container:hover .card{
+            transform: rotate(calc(var(--i) * 5deg))
+                        translate(calc(var(--i) * 180px), -10px);
+            cursor: pointer;
+        }
+        .container .card:active{
+            translate:calc(var(--i) * 20px) -30px ;
+            z-index: 999;
+        }
+        /*设置文字位置样式*/
+        .center-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        min-height: 100vh; /* 设置最小高度为视口高度 */
+        text-align: center;
+        color:white;/*设置文字颜色*/
+
+        }
+        h1{
+            font-size: 100px;/*设置大标题字体大小*/
+            margin-top: 150px;/*设置大标题纵向位置*/
+            margin-left: 160px;
+        }
+        p{
+            font-size: 24px;
+            font-weight: 400;/*设置副标题字体粗细*/
+            margin-top: 200px;
+            margin-left: 160px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navlist">
+        <!--放入列表-->
+          <a href="../2024ZWU-IS-3-Yes-or-yes/index.html">Home</a>
+          <a href="../2024ZWU-IS-3-Yes-or-yes/dailyhomework/dailyhomework.html">Daily Homework</a>
+          <a href="../2024ZWU-IS-3-Yes-or-yes/finalproject/finalproject.html">Final Project</a>
+          <a href="../2024ZWU-IS-3-Yes-or-yes/aboutus/Aboutus.html">About us</a> <!--将对应网页文件链接到导航栏模块上-->
+    </div>
+    <header>
+        <div class="center-container">
+        <h1>Yes-Or-Yes</h1>
+
+      </code></pre>
       <section id="subsection2-1"><h3>A-How to set the background image</h3>
       <p>Use the <i>style</i> tag to add CSS code that defines the style of the background image.</p>
       <h4>Code</h4>
@@ -193,38 +313,58 @@
         &lt;/div&gt;
         </code></pre>
 
-      <section id="subsection2-3"><h3>C-How to set the button style</h3>
-      <h4>C.1 Use the <i>style</i> tag to add CSS code that defines the style of the button.</h4>
+      <section id="subsection2-3"><h3>C-How to set the flot style</h3>
+      <h4>C.1 Use the <i>style</i> tag to add CSS code that defines the style of the flot.</h4>
       <h5>Code</h5>
       <pre><code>
-        /*Set button style*/
-        .button1{
-            display: flex;
-            align-items: center;
-            justify-content: center;/*Center the content level*/
-            background-color: transparent;/*The button background color is transparent*/
-            color: white;/*font color*/
-            width: 155px;
-            height: 60px;/*Button length and width*/
-            border-radius: 50px;/*Rectangle rounded degree*/
-            text-align: center;
-            text-decoration: none;/*Ununderline button text*/
-            font-size: 30px;/*Text size*/
-            border: 1px solid white;/*Button border thickness and border color*/
-            position: absolute;
-            top: 780px;
-            left: 580px;/*Button position*/
-            cursor: pointer;/*After the mouse is moved over the button, the cursor style is a hand icon*/
-        }
+.container{
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+.container .card{
+  transform: translateY(100px);
+  transform: translateX(140px);
+  position: absolute;
+  width: 400px;
+  height: 600px;
+  background-color: white;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  transition: .5s;
+  transform-origin: 50% 100%;
+  }
+.container:hover .card{
+  transform: rotate(calc(var(--i) * 5deg))
+    translate(calc(var(--i) * 180px), -10px);
+  cursor: pointer;
+  }
+.container .card:active{
+  translate:calc(var(--i) * 20px) -30px ;
+  z-index: 999;
+  }
       </code></pre>
 
-      <h4>C.2 Show text in HTML with the <i>a href class="button"=" " /a </i>code that corresponds to the page and adds text 
-        <br>to the button link.</h4>
+      <h4>C.2 Show text in HTML with the <i>a href=" "class="card"style="--i: ;"></i>code that corresponds to 
+      <br>the page and adds text to the csrd link.</h4>
         <h5>Code</h5>
-        <pre><code class="language-html"> 
-          &lt;a href="Aboutus.html" class="button1"&gt;About us&lt;/a&gt;
-          &lt;a href="dailyhomework.html" class="button2"&gt;Daily Homework&lt;/a&gt;
-          &lt;a href="finalproject.html" class="button3"&gt;Final Project&lt;/a&gt;          
+        <pre><code>
+          &lt;div class="container"&gt;
+            &lt;a href="../2024ZWU-IS-3-Yes-or-yes/aboutus/Aboutus.html"class="card"style="--i:-1;"&gt;
+                &lt;img src="./home/au.png"&gt;
+            &lt;/a&gt;
+            &lt;a href="../2024ZWU-IS-3-Yes-or-yes/dailyhomework/dailyhomework.html"class="card"style="--i:0;"&gt;
+            &lt;img src="./home/daily.png"&gt;
+            &lt;/a&gt;
+            &lt;a href="../2024ZWU-IS-3-Yes-or-yes/finalproject/finalproject.html"class="card"style="--i:1;"&gt;
+            &lt;img src="./home/final.png"&gt;
+            &lt;/a&gt;
+        &lt;/div&gt;         
         </code></pre>  
 
       <section id="subsection2-4"><h3>D-How to set the title and subtitle text position</h3>
