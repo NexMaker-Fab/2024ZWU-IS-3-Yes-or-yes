@@ -346,13 +346,34 @@
         <p>
         <br>2.2 Debug code 
         </p>
-        <img src="./ao-3/ao-3-7.jpg">
         <pre><code>
-            #define LED_PIN 6
-            #define LED_COUNT 8   
-            Adafruit_NeoPixel strip(8, 6, NEO_GRB + NEO_KHZ800);
+#include &lt;Adafruit_NeoPixel.h&gt;
+#ifdef __AVR__
+#include &lt;avr/power.h&gt; // Required for 16 MHz Adafruit Trinket
+#endif
+Adafruit_NeoPixel pixels(8, 6, NEO_GRB + NEO_KHZ800);
+//An Adafruit NeoPixel object called pixels is created that specifies the number of LED strips (8 leds), the control pin (pin 6), and the color arrangement of the strip (NEO GRB). 
+The NEO KHZ800 indicates that the drive frequency of the LED is 800KHz.
+          
+void setup() {
+#if defined(__AVR_ATtiny85__) && (F_CPU == 16000000)//The function Pixens.begin () is called to initialize the NeoPixel LED strip object.
+  clock_prescale_set(clock_div_1);
+#endif
+  pixels.begin(); // INITIALIZE NeoPixel strip object (REQUIRED)
+  }
+          
+void loop() {
+//pixels.clear(); // Set all pixel colors to 'off'
+for (int i = 0; i &lt; 8; i++) { 
+pixels.setPixelColor(i, pixels.Color(random(0,255), random(0,255), random(0,255),50)); 
+// Let the water lights light up one by one from 1 to 8, and the light color is random
+pixels.show();   // Send the updated pixel colors to the hardware.
+delay(100); // Pause before next pass through loop
+  }
+}
         </code></pre>    
-        <p>The number of blocks changed from 60 to 8，Change the input PIN from LED PIN to 6.</p>
+        <p>This code uses the Adafruit NeoPixel library to control the NeoPixel LED strip, so that the LED lights are lit one by one, 
+        <br>and the color of each LED is random and continuously lit for a period of time, and the light transparency is set to 50.</p>
         
 
         <h3 id="subsection4-3">3-Circuit diagram</h3>
@@ -364,7 +385,7 @@
         <img src="./ao-3/ao-3-10.jpg">
         <p>This picture shows the physical connection of the water lamp</p>
 
-        <h3 id="subsection3-5">5-Water lamp effect display</h3>
+        <h3 id="subsection4-5">5-Water lamp effect display</h3>
         <img src="./ao-3/ao-3-11.gif">
         <p>This .gif shows the flow light in motion</p>
         
