@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../finalp.css">
+<style>
+        body{
+            margin: 0;
+            padding: 0;
+            background-color: black; 
+            color:white;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* 设置最小高度为视口高度 */
+
+        }
+
+        /*图片大小*/
+       img{
+        width: 900px;
+        height: 600px;
+        margin-left: 30px;
+        }
+        img.pic{
+            width: 900px;
+            height: 1000px;
+        }
+
+</style>
+</head>
+<body>
+    <div id="sidebar">
+        <!-- 侧边栏内容 -->
+        <ul>
+          <a href="#section1"><h5>Ideal 1-Emotional Guardian</h5></a>
+
+
+          <a href="#section2"><h5>B: Common shade full color RGB light</h5></a>
+
+          
+          <a href="#section3"><h5>C: ST7735 Screen</h5></a>
+
+
+          <a href="#section4"><h5>Ideal 4-Blood sugar grip tester </h5></a>
+
+          
+          <a href="#section5"><h5>Ideal 5-Cutlery detector</h5></a>
+
+
+          <a href="../finalproject.html"><h5>Return</h5></a>
+        </ul>
+      </div>
+    <header>
+        <h1>Electric Control Part</h1>
+    </header>
+
+    <h2>Overall electrical control logic diagram</h2>
+    <img src="./cp/cp-1.jpg">
+    <!--part1-->
+    <section id="section1"><h2>Ideal 1-Emotional Guardian</h2> 
+        
+       
+        
+    <!--part2-->
+    <section id="section2"><h2>B: Common shade full color RGB light</h2> 
+    <h3>B-1 Function Introduction</h3>
+    <p>LED lights as indicators, the function is to show the size of the pressure through different colors 
+    <br>of light.
+    <br>When the pressure is less than 205, the LED lights green, indicating that the pressure is at a low 
+    <br>level.
+    <br>When the pressure is between 205 and 290 units, the LED lights blue, indicating moderate pressure.
+    <br>When the pressure is greater than 290 units, the LED lights red, indicating that the pressure is 
+    <br>higher.
+    <br>This setting allows the user to intuitively understand the pressure state and make judgments or take 
+    <br>actions based on different colors. </p>
+    <h3>B-2 Arduino</h3>
+    <pre><code>
+        //2024.6.19 by JinXuan
+        // Define the pins connected to the Arduino
+        const int sensorPin = A0;    // Pressure sensor connected to A0
+        const int switchPin = 2;     // Switch connected to D2
+        const int redLEDpin = 3;      // Red LED connected to D3
+        const int blueLEDpin = 5;      // Blue LED connected to D5
+        const int greenLEDpin = 4;    // Green LED connected to D4
+        
+        // Define thresholds
+        const int lowThreshold = 205; // Low pressure threshold
+        const int highThreshold = 290; // High pressure threshold
+        
+        void setup() {
+          Serial.begin(9600);         // Initialize serial communication
+          pinMode(sensorPin, INPUT); // Set the pressure sensor pin as input
+          pinMode(switchPin, INPUT_PULLUP); // Set the switch pin as input and enable internal pull-up resistor
+          pinMode(redLEDpin, OUTPUT); // Set the red LED pin as output
+          pinMode(greenLEDpin, OUTPUT); // Set the green LED pin as output
+          pinMode(blueLEDpin, OUTPUT); // Set the blue LED pin as output
+        }
+        void loop() {
+          // Read the analog value from the pressure sensor
+          int sensorValue = analogRead(sensorPin);
+        
+          if (sensorValue &lt; lowThreshold && sensorValue &gt; 10) {
+            digitalWrite(greenLEDpin, HIGH); // Turn on the green LED
+            digitalWrite(redLEDpin, LOW);   // Turn off the red LED
+            digitalWrite(blueLEDpin, LOW);   // Turn off the blue LED
+          } else if (sensorValue &gt; highThreshold) {
+            digitalWrite(greenLEDpin, LOW);   // Turn off the green LED
+            digitalWrite(redLEDpin, HIGH);  // Turn on the red LED
+            digitalWrite(blueLEDpin, LOW);   // Turn off the blue LED
+          } else {
+            digitalWrite(greenLEDpin, LOW);   // Turn off the green LED
+            digitalWrite(redLEDpin, LOW);    // Turn off the red LED
+            digitalWrite(blueLEDpin, HIGH);  // Turn on the blue LED
+          }
+        
+          // Add a short delay to avoid high CPU usage
+          delay(90);
+        }
+        
+    </code></pre>
+    <h3>B-3 Circuit diagram</h3>
+    <img src="./cp-b/cp-b-1.png">
+    <h3>B-4 Physical connection mode</h3>
+    <img src="./cp-b/cp-b-2.JPG">
+    <h3>B-5 Physical effect</h3>
+    <img src="./cp-b/cp-b-3.gif">
+
+
+    
+
+    <!--part3-->
+    <section id="section3"><h2>C: ST7735 Screen</h2>  
+    <h3>C-1 Function Introduction</h3>
+    <p>Through the number of pressure sensors, judge the user's pressure value interval at the moment, and 
+    <br>the corresponding heartbeat rate will be accelerated if the pressure value is too large. Through 
+    <br>the screen, we draw an animation of the heartbeat, and through the change of the heartbeat frequency, 
+    <br>we can visualize the user's pressure value.</p>
+    <h3>C-2 Arduino</h3>
+    <h4>1. Library file configuration</h4>
+    <p>step1: Open the Admin library in the arduino toolbar</p>
+    <img src="./cp-c/cp-c-1.jpg">
+    <p>step2: Search for ST7735 and GFX, download the library files in the picture box and use them.</p>
+    <img src="./cp-c/cp-c-2.PNG">
+    <img src="./cp-c/cp-c-3.PNG">
+    <h4>2. Application code</h4> 
+    <pre><code>
+        //2024.6.22 by Jin Cancan
+        #include &lt;Adafruit_ST7735.h&gt; // Contains the ST7735 library
+        #include &lt;Adafruit_GFX.h&gt;   // Contains the GFX library
+        
+        // Defines the connection pins for the display
+        #define TFT_RST 10
+        #define TFT_DC 9
+        #define TFT_CS 8
+        #define TFT_MOSI 11  // Data out
+        #define TFT_SCLK 13  // Clock out
+        const int sensorPin = A0;    
+        const int lowThreshold = 135; 
+        const int highThreshold = 280;
+        int p=1000;
+        
+        // Initializes the display object
+        Adafruit_ST7735 tft = Adafruit_ST7735(TFT_CS, TFT_DC, TFT_RST);
+        
+        void setup() {
+          pinMode(sensorPin, INPUT); 
+          tft.initR(INITR_BLACKTAB); // Initialize the display, where the black Tab is used
+          tft.fillScreen(ST7735_BLACK); // Fill the screen with black
+        }
+        
+        void drawHeart(int x, int y, int heartsize) {
+          // Calculate the coordinates of the heart vertex
+          int topX = x;
+          int topY = y + heartsize / 2;
+          int leftX = x - heartsize / 2;
+          int leftY = y ;
+          int rightX = x + heartsize / 2;
+          int rightY = y ;
+        
+          // Draw the apex of the heart shape
+          tft.fillTriangle(leftX, leftY, topX, topY, rightX, rightY, ST7735_RED);
+        
+          // Calculate the coordinates of the circular part
+          int circleSize = heartsize / 3;
+          int leftCircleX = x - heartsize / 4;
+          int leftCircleY = y - heartsize / 4 + 1;
+          int rightCircleX = x + heartsize / 4;
+          int rightCircleY = y - heartsize / 4 + 1;
+        
+          // Draw a circle
+          tft.fillCircle(leftCircleX, leftCircleY, circleSize, ST7735_RED);
+          tft.fillCircle(rightCircleX, rightCircleY, circleSize, ST7735_RED);
+        }
+        
+        void loop() {
+          int sensorValue = analogRead(sensorPin);
+          
+            if (sensorValue &lt; lowThreshold&&sensorValue&gt;10) {
+              p=1000;
+            } else if (sensorValue &gt; highThreshold) {
+              p=600;
+            }else{
+              p=200;
+            }
+        
+          // Calculate the size and position of the heart and make sure it is in the center of the screen
+          int heartSize = min(tft.width() / 3, tft.height() / 3);
+          int x = tft.width() / 2;
+          int y = tft.height() / 2;
+          // Draw love
+          drawHeart(x, y, heartSize);
+          delay(p);
+          tft.fillScreen(ST7735_BLACK); 
+          heartSize = min(tft.width() / 2.5, tft.height() / 2.5);
+          x = tft.width() / 2;
+          y = tft.height() / 2;
+          drawHeart(x, y, heartSize);
+          delay(p);
+          tft.fillScreen(ST7735_BLACK);
+          heartSize = min(tft.width() / 2 , tft.height() / 2);
+          x = tft.width() / 2;
+          y = tft.height() / 2;
+          drawHeart(x, y, heartSize);
+          delay(p);
+          tft.fillScreen(ST7735_BLACK); 
+        }
+    </code></pre>
+    <h3>C-3 Circuit diagram</h3>
+    <img src="./cp-c/cp-c-4.jpg">
+    <h3>C-4 Physical connection mode</h3>
+    <img src="./cp-c/cp-c-5.jpg" >
+    <h3>C-5 Physical effect</h3>
+    <h4>When the pressure value is normal</h4>
+    <img src="./cp-c/cp-c-6.gif"class="pic">
+    <h4>When the pressure is a little high</h4>
+    <img src="./cp-c/cp-c-7.gif"class="pic">
+    <h4>The pressure value is too high</h4>
+    <img src="./cp-c/cp-c-8.gif"class="pic">
