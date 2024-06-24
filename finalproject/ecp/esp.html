@@ -33,7 +33,7 @@
     <div id="sidebar">
         <!-- 侧边栏内容 -->
         <ul>
-          <a href="#section1"><h5>Ideal 1-Emotional Guardian</h5></a>
+          <a href="#section1"><h5>A: Air pressure sensor</h5></a>
 
 
           <a href="#section2"><h5>B: Common shade full color RGB light</h5></a>
@@ -57,8 +57,30 @@
 
     <h2>Overall electrical control logic diagram</h2>
     <img src="./cp/cp-1.jpg">
+
     <!--part1-->
-    <section id="section1"><h2>Ideal 1-Emotional Guardian</h2> 
+    <section id="section1"><h2>A: Air pressure sensor</h2> 
+    <h3>A-1 Find the library file</h3>
+    <img src="./cp-a/esp-1-1.png">
+    <p>Open Arduino and open the file</p>
+    <img src="./cp-a/esp-1-2.png">
+    <p>Open the example and find <b>AnalogReadSerial</b> in <b>01 Basics</b> of the built-in example</p>
+    <h3>A-2 Debug code value</h3>
+    <p>Members Rosalynn and Cynthia in the group conducted experimental measurements of the minimum and 
+    <br>maximum pressure values of the airbag respectively.</p>
+    <h5>First, the value with less pressure is tested, and the measurement result is 205</h5>
+    <img src="./cp-a/esp-1-3.jpg">
+    <img src="./cp-a/esp-1-4.jpg">
+    <img src="./cp-a/esp-1-5.png">
+    <h5>The value of higher pressure was tested again, and the measurement result was 290</h5>
+    <img src="./cp-a/esp-1-6.jpg">
+    <img src="./cp-a/esp-1-7.jpg">
+    <img src="./cp-a/esp-1-8.png">
+    <h3>A-3 Circuit diagram</h3>
+    <img src="./cp-a/esp-1-9.png">
+    <h3>A-4 Physical connection mode</h3>
+    <img src="./cp-a/esp-1-10.jpg">
+    <img src="./cp-a/esp-1-11.jpg">
         
        
         
@@ -156,8 +178,8 @@
         #define TFT_MOSI 11  // Data out
         #define TFT_SCLK 13  // Clock out
         const int sensorPin = A0;    
-        const int lowThreshold = 135; 
-        const int highThreshold = 280;
+        const int lowThreshold = 205; 
+        const int highThreshold = 290;
         int p=1000;
         
         // Initializes the display object
