@@ -30,22 +30,17 @@
         <!-- 侧边栏内容 -->
         <ul>
           
-          <a href="#section1"><h5>01 Project background and objectives</h5></a>
-          <a href="#subsection1-1"><p>1-1 New application</p></a>
-          <a href="#subsection1-2"><p>1-2 new technology about material</p></a>
-          <a href="#subsection1-3"><p>1-3 Machine</p></a>
-          <a href="#subsection1-4"><p>1-4 New paper</p></a>
-          <a href="#section2"><h5>02 Use slice software</h5></a>
-          <a href="#subsection2-1"><p>2-1 3D modeling</p></a>
-          <a href="#subsection2-2"><p>2-2 The model is transferred to Ultimaker Cura</p></a>
-          <a href="#subsection2-3"><p>2-3 Print parameter setting</p></a>
-          <a href="#subsection2-4"><p>2-4 Derivation step</p></a>
-          <a href="#section3"><h5>03 Use 3D printer to manufacture</h5></a>
-          <a href="#section4"><h5>04 Postprocess the surface</h5></a>
-          <a href="#section5"><h5>05 Read gcode</h5></a>
-          <a href="#subsection5-1"><p>5-1 Meaning analysis</p></a>
-          <a href="#subsection5-2"><p>5-2 How to draw a gcode file</p></a>
-          <a href="#subsection5-3"><p>5-3 Outline draught</p></a>
+          <a href="#section1"><h5>01 Background and objectives</h5></a>
+          <a href="#subsection1-1"><p>Project core</p></a>
+          <a href="#subsection1-2"><p>Specific goals</p></a>
+
+          <a href="#section2"><h5>02 LOT technical architecture</h5></a>
+          <a href="#subsection2-1"><p>2-1 Sensor network</p></a>
+          <a href="#subsection2-2"><p>2-2 Data transmission</p></a>
+          <a href="#subsection2-3"><p>2-3 Data processing and storage</p></a>
+          <a href="#section3"><h5>03 Applications and functions</h5></a>
+          <a href="#section4"><h5>04 User experience and interaction design</h5></a>
+          <a href="#section5"><h5>05 Risk assessment and countermeasures</h5></a>
 
 
 
@@ -70,5 +65,231 @@
     <img src="./iot-1/iot-1-1.jpg">
     <img src="./iot-1/iot-1-2.jpg">
     <!--第一部分-->
-    <section id="section1"><h2>01 Project background and objectives</h2>
-    <section id="section1-1"><h3>Project core</h3>
+    <section id="section1"><h2>01 Background and objectives</h2>
+    <section id="subsection1-1"><h3>Project core</h3>
+    <p><b>Nature of the project: </b>The IOT project of OPPO and Ideal Automobile is mainly a deep cooperation 
+    <br>around the interconnection of vehicles and machines. The collaboration aims to provide a more intelligent 
+    <br>and convenient vehicle experience by combining the technology strengths of both companies.</p>
+    <p><b>Core problem: </b>It aims to solve the inconveniences that users encounter when interacting with cars 
+    <br>using smartphones, such as forgetting to carry car keys and cumbersome manual operation. Through 
+    <br>vehicle-machine interconnection technology, users can control vehicles more easily and improve vehicle 
+    <br>efficiency and safety. In addition, with the development of 5G technology, such cooperation will also 
+    <br>help promote the advancement of connected vehicle technology and lay the foundation for future intelligent 
+    <br>transportation systems.</p>
+    <section id="subsection1-2"><h3>Specific goals</h3>
+    <p><b>1.Improve user experience:</b> 
+    <br>Through the seamless connection of mobile phone and car machine, users can more easily control the vehicle, 
+    <br>such as remote opening and closing doors, Windows, air conditioning, etc., and one-click car search and 
+    <br>other operations.</p>
+    <img src="./iot-1/iot-1-4.jpg">
+    <p><b>2.Enhance vehicle functions: </b>Through software upgrade, add functions such as vehicle App, mobile 
+    <br>desktop car control, unlock ventilation, central control screen revision, etc., to improve the intelligent 
+    <br>level of vehicle system.</p>
+    <p><b>3.Keyless unlock: </b>Users can use their mobile phones or smart watches as car keys to achieve 
+    <br>non-inductive Bluetooth car key functions, such as querying charging status, remote air conditioning, 
+    <br>remote door/window, etc.</p>
+    <img src="./iot-1/iot-1-3.jpg">
+    <p><b>4.Provide real-time information: </b>Users can view vehicle information, such as pure electric and fuel 
+    <br>range, and get real-time updates on vehicle status through their mobile phones.</p>
+    <img src="./iot-1/iot-1-5.jpg">
+    <img src="./iot-1/iot-1-6.jpg">
+
+
+
+
+        <!--第二部分-->
+        <section id="section2"><h2>02 LOT technical architecture</h2>
+        <section id="subsection2-1"><h3>2-1 Sensor network</h3>
+        <p><b>Examples: </b>Ambient light sensor、Temperature sensor、 Humidity sensor、Air quality sensors、
+        <br>Eye-tracking sensor、Vehicle running status sensor、Health sensors、Camera sensor、 
+        <br>Ultrasonic sensors、Infrared sensor、Sound sensorAmbient light sensor、Temperature sensor、 
+        <br>Humidity sensor、Air quality sensors、Eye-tracking sensor、Vehicle running status sensor、
+        <br>Health sensors、Camera sensor、 Ultrasonic sensors、Infrared sensor、Sound sensor</p>
+        <h4>Interior temperature sensor:</h4>
+        <p>The temperature sensor in the car is a thermistor with a negative temperature coefficient, and the 
+        <br>resistance value of the thermistor will gradually decrease as the temperature value increases. The 
+        <br>temperature sensor in the car is an important information input component of the automatic air 
+        <br>conditioning, which is used to detect the temperature in the car to control the work of the air 
+        <br>conditioning system. When the temperature inside the car changes, the resistance value of the 
+        <br>thermistor changes, thereby conveying the temperature signal inside the car to the air conditioning 
+        <br>ECU. It can affect the air temperature of the outlet, the air volume of the outlet, the position 
+        <br>of the mode damper, and the position of the internal and external circulation damper.</p>
+        <img src="./IOT-2/IOT-2-1.png">
+        <p>Some temperature sensors in the car are installed inside the instrument panel, and there are special 
+        <br>grille port installation positions; Some are mounted on the control panel.</p>
+        <img src="./IOT-2/IOT-2-2.png">
+        <h4>Ultrasonic sensor:</h4>
+        <p>Ultrasonic sensor is a device that uses ultrasonic signal for distance measurement and obstacle 
+        <br>detection. They calculate the distance from the transmitting point to the obstacle by transmitting 
+        <br>ultrasonic signals and receiving the signals reflected back by the obstacle. Because ultrasonic 
+        <br>sensors are insensitive to color, light and electromagnetic fields, they can work effectively in 
+        <br>the dark, smoke, dust, and electromagnetic interference environment.</p>
+        <img src="./IOT-2/IOT-2-3.png">
+        <p>Brake assistance: Ultrasonic sensors can help the driver accurately judge the distance to the vehicle 
+        <br>or obstacles in front of the vehicle, if the distance is too close, the vehicle will issue a warning, 
+        <br>some smart cars can also automatically slow down or stop, effectively prevent traffic accidents.</p>
+        <img src="./IOT-2/iot-2-5.jpg">
+        <p>Automated parking: Ultrasonic sensors play a key role in automated parking systems, measuring the 
+        <br>distance between the vehicle and surrounding obstacles and assisting the vehicle to enter the 
+        <br>parking space safely and smoothly.</p>
+        <p>Parking Assist Systems (PAS) : PAS systems use ultrasonic sensors to measure the vehicle's distance from 
+        <br>obstacles and notify the driver of proximity, helping the driver avoid collisions or bruises.</p>
+        <img src="./IOT-2/IOT-2-4.png">
+
+        <section id="subsection2-2"><h3>2-2 Data transmission</h3>
+        <h4>Use the temperature sensor inside the car to explain in detail</h4>
+        <p><b>To control the temperature in the car with a mobile phone, you first need to carry out 
+        <br>the following steps:</b></p>
+        <p>1.Install a Connected Car APP: First, you need to download and install a Connected Car app (APP) on your 
+        <br>phone, which is usually provided by the car manufacturer or a smart car control app developed by a 
+        <br>third party.
+        <br>2.Sign up and pair: Open the app and follow the prompts to sign up for an account, then pair your phone 
+        <br>with your vehicle's iot system. This usually needs to be done via Bluetooth or the vehicle's Wi-Fi 
+        <br>network.
+        <br>3.Authorization and connection: After a successful pairing, you may need to confirm on the vehicle's 
+        <br>center control screen to authorize the phone's ability to control the vehicle.
+        <br>4.Control the temperature in the car: Once paired and authorized, you can control the temperature in 
+        <br>the car through the mobile APP. You can set the desired temperature, adjust the air conditioning mode 
+        <br>(such as cooling, heating or ventilation), and even remotely turn on or off the air conditioning system.</p>
+        <p><b>In-car temperature sensors need to transmit data to the central processing system by:</b></p>
+        <p>1.Wired transmission: Temperature data collected by the sensors is transmitted via a network of wires inside 
+        <br>the vehicle to a central processing unit (ECU).
+        <br>2.Wireless transmission: In some modern vehicles, sensors may send data to a central processing system via 
+        <br>wireless technology such as Bluetooth, Wi-Fi, or a dedicated vehicle communication network.
+        <br>3.Data processing: After receiving the data from the sensors, the central processing system processes and 
+        <br>parses it to determine the current temperature inside the vehicle.
+        <br>4.Feedback control: The processed data is used to adjust the operation of the air conditioning system to 
+        <br>keep the interior temperature within the set range.</p>
+        <h4>Use ultrasonic sensors to explain in detail</h4>
+        <p><b>Ultrasonic sensors need to transmit data to the central processing system by:</b></p>
+        <p>1.Wired transmission: Data collected by the sensors is transmitted via a network of wires inside the vehicle 
+        <br>to a central processing unit (ECU).
+        <br>2.Wireless transmission: In some modern vehicles, sensors may send data to a central processing system via 
+        <br>wireless technology such as Bluetooth, Wi-Fi, or a dedicated vehicle communication network.
+        <br>3.CAN bus communication: Many cars use the Controller Area Network (CAN) bus system to transmit data from 
+        <br>various components inside the vehicle, including ultrasonic sensors. The CAN bus is an efficient intra-vehicle 
+        <br>communication protocol that allows for the rapid and reliable exchange of large amounts of data.</p>
+
+        <section id="subsection2-3"><h3>2-3 Data processing and storage</h3>
+        <h4>Use the temperature sensor inside the car to explain in detail</h4>
+        <p><b>Basic steps of data processing:</b></p>
+        <p>1.Data acquisition: Sensors collect temperature data in the car and convert it into electrical signals.
+        <br>2.Signal conversion: The analog signal received by the central processing system usually needs to be 
+        <br>converted into a digital signal by an analog-to-digital converter (ADC) for computer processing. Data 
+        <br>processing: The digital signal is processed by a microprocessor or microcontroller to calculate the 
+        <br>current temperature value.
+        <br>3.Data analysis: The processed data may be compared with preset temperature thresholds to determine 
+        <br>whether the operation of the air conditioning system needs to be adjusted.</p>
+        <p><b>Common ways of storing data:</b></p>
+        <p>1.Temporary storage: Processed data may be temporarily stored in memory for real-time monitoring and 
+        <br>processing.
+        <br>2.Long-term storage: If it is necessary to record historical data on temperature changes, this data 
+        <br>may be stored in the vehicle's permanent memory, such as flash memory or hard drive.
+        <br>3.Cloud storage: In some modern vehicles, data may be uploaded to a cloud server for remote access and 
+        <br>analysis.</p>
+        <p><b>Technical requirements for data processing and storage:</b></p>
+        <p>1.Accuracy: The temperature sensor must have high precision to ensure the accuracy of temperature data.
+        <br>2.Speed of response: Sensors and processing systems must be able to respond quickly to temperature 
+        <br>changes in order to adjust the air conditioning system in a timely manner.
+        <br>3.Stability: The system must be stable and reliable to prevent data loss or errors.
+        <br>4.Security: Stored data must be secure from unauthorized access.</p>
+
+
+
+            <!--第三部分-->
+    <section id="section3"><h2>03 Applications and functions</h2>
+    <h3>Real-time monitoring</h3>
+    <p>Through the integration of Internet of Things technology, real-time monitoring of vehicle driving status 
+    <br>is realized. Lenovo's sensors are installed in key parts of the vehicle, ensuring that they work continuously. 
+    <br>The sensors are able to monitor the vehicle's mileage in real time and send the data to a cloud server 
+    <br>via a wireless network.
+    <br>The user's smartwatch syncs with Lenovo's cloud service to display the vehicle's remaining miles in real 
+    <br>time. Users can easily access the current remaining mileage information by simply looking at the corresponding 
+    <br>app or interface on the watch. This allows the user to know the battery life of the vehicle at any time 
+    <br>before or during the trip, so as to better plan the trip and avoid the inconvenience caused by low power.</p>
+    <img src="./iot-3/iot-3-1.jpg">
+    <h3>Remote control</h3>
+    <p>Users can remotely control the ideal car via OPPO smart devices. Users can remotely unlock the car, adjust the air 
+    <br>conditioning temperature and more.</p>
+    <h4>Unlock the car:</h4>
+    <img src="./iot-3/iot-3-2.PNG">
+    <p>Users need to pair their smart device with the car, opening the app provided by the car manufacturer to launch 
+    <br>on the smart device. Click on the remote unlock option, and after the user clicks, the application will send a 
+    <br>command to the vehicle's on-board system, and the vehicle will execute the unlock action after receiving the 
+    <br>command. When the vehicle receives the unlock command, the corresponding light or sound prompt will indicate 
+    <br>that the door has been unlocked.This remote control capability increases user convenience and enhances vehicle 
+    <br>safety.</p>
+    <h4>Regulating air conditioning:</h4>
+    <img src="./iot-3/iot-3-3.jpg">
+    <p>Within the app, the user selects the remote control function and clicks the Start air conditioning option. 
+    <br>The user then adjusts the desired temperature. After the application receives the user's Settings, it sends 
+    <br>a command containing instructions for temperature adjustment.
+    <br>After receiving the command, the vehicle on-board system will automatically adjust the temperature in the 
+    <br>vehicle according to the command to ensure that the ideal temperature set by the user is reached. In this 
+    <br>way, users can enjoy a comfortable interior environment before entering the vehicle.</p>
+    <h3>Predictive analysis</h3>
+    <p>By analyzing the data collected by the vehicle's sensors, the system can predict potential failures and 
+    <br>maintenance needs, 
+    <br>thereby notifying users of repairs in advance and reducing the risk of unexpected breakdowns.
+    <br>Predictive analytics can also help optimize resource use, such as predicting the best time to refuel or 
+    <br>recharge based on historical driving data and weather forecasts to save energy costs.</p>
+
+
+    
+    <!--第四部分-->
+    <section id="section4"><h2>04 User experience and interaction design</h2>
+    <h3>Interface design: </h3>
+    <p>The user interface design philosophy of OPPO watches focuses on the combination of simple aesthetics 
+    <br>and functional practicality, aiming to provide a smooth and intuitive user experience.</p>
+    <img src="./iot-4/iot-4-1.jpg">
+    <p>The interface is based on a simple and clear design style to avoid visual complexity and confusion. 
+    <br>Each element is carefully laid out to ensure a clear level of information that is easy for users to 
+    <br>understand and manipulate.</p>
+    <img src="./iot-4/iot-4-2.jpg">
+    <h3>Personalized services:</h3>
+    <p>Discuss how data collected by IoT can be used to provide users with personalized services or products. 
+    <br>Provides a wealth of personalized Settings options, allowing users to adjust the interface style, dial 
+    <br>style, notification display and other Settings according to their preferences, to meet the needs and 
+    <br>preferences of different users.</p>
+    <img src="./iot-4/iot-4-3.jpg">
+    <img src="./iot-4/iot-4-4.jpg">
+    <p>The watch interface focuses on smooth interaction and natural gesture operation. For example, by performing 
+    <br>various actions with simple gestures such as swiping and clicking, users can quickly and seamlessly 
+    <br>browse information and perform functions.</p>
+    <img src="./iot-4/iot-4-5.jpg">
+    <img src="./iot-4/iot-4-6.jpg">
+    <h3>Feedback mechanisms:</h3>
+    <p> Establish effective user feedback systems to continuously optimize IoT solutions.
+    <br>Use IoT devices and sensors to collect diverse data such as user behavior, health indicators, environmental 
+    <br>conditions, and more. Integrate the collected data into a unified platform or system for in-depth 
+    <br>analysis and mining. Through data analysis algorithms (such as machine learning models), users' preferences, 
+    <br>habits and behavior patterns are identified.</p>
+    <img src="./iot-4/iot-4-7.jpg">
+    <p>Provide multiple feedback channels, such as in-app feedback forms, website feedback pages, customer 
+    <br>service hotline, social media, etc. Make it easy for users to choose the feedback channel that works 
+    <br>best for them.</p>
+    <img src="./iot-4/iot-4-8.jpg">
+
+
+
+
+    
+    <!--第五部分-->
+    <section id="section5"><h2>05 Risk assessment and countermeasures</h2>
+    <h3>Risk:</h3>
+    <p><b>1.Security vulnerabilities: </b>iot devices often have security vulnerabilities due to their interconnected 
+    <br>and intelligent nature. 
+    <br>These vulnerabilities can be exploited by hackers, such as breaking into home networks or corporate systems, 
+    <br>stealing personal or commercially sensitive information, or even taking control of iot devices for malicious 
+    <br>operation.</p>
+    <p><b>2.Privacy concerns:</b>Many iot devices collect and process large amounts of user data, including personal 
+    <br>preferences, location information, physiological data, and more. Improper handling of this data may violate 
+    <br>user privacy, such as unauthorized data collection, data leakage, or data being used for unauthorized purposes.</p>
+    <img src="./iot-5/iot-5-1.png">
+    <h3>Measures：</h3>
+    <p>1.Implement data encryption, data anonymization, and access control measures to protect data generated and 
+    <br>transmitted by IoT devices. At the same time, develop data retention and deletion policies to comply with 
+    <br>privacy regulations.</p>
+    <p>2.Manage and assess security at all stages of the supply chain, including equipment manufacturers, software 
+    <br>vendors and service providers. Ensure that risks are controlled and managed at source.</p>
+    <img src="./iot-5/iot-5-2.jpg">
